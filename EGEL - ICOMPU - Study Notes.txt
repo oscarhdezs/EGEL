@@ -1,0 +1,207 @@
+A - SELECCION DE SISTEMAS COMPUTACIONALES PARA APLICACIONES ESPECIFICAS
+A1 - INVESTIGACION DE LOS SITEMAS COMPUTACIONALES DISPONIBLES
+A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 22-58 book1
+
+CAdena de valor
+	Serie de actividades que incluye logistica interna, bodegas y almacenamiento, produccion, almacenamiento del producto terminado, 
+	logistica externa, marketing y ventas, y servicio al cliente.
+
+
+La combinacion de cadena de valor y el inventario JIT significa que las empresas pueden entregar materiales o partes cuando se necesiten.
+
+Administracion corriente alto
+	Administracion de materia prima la logistica interna y las instalaciones de almacenamiento y bodegas.
+
+Administracion corriente bajo
+	Administracion del almacenamiento de producto terminado, logistica externa, marketing y ventas y servicio al cliente.
+
+Administracion de cadena de suministros
+	Determina la mercancia que requiere la cadena de valor, las cantidades necesarias para satisfacer la demanda del cliente, la forma en que deben 
+	procesarse los suministros para obtener bienes y servicios terminados y la forma en que deben programarse supervisarse y controlarse la entrega 
+	de productos y suministros a los clientes. 
+
+Estructura organizacional tradicional (Estructura Jerarquica)
+	Piramide administrativa donde la jerarquia de la toma de decisiones y la autoridad fluye desde la cupula estrategica ubicada en la parte superior 
+	hasta la gerencia operativa y los empleados sin puesto gerencial.
+
+Estructura organizacional plana
+	otorga autoridad a los empleados de los niveles mas bajos para que tomen decisiones, esto es, resuelvan problemas sin solicitar permiso a los gerentes
+	de nivel medio
+
+Estructura organizacionales por proyecto 
+	Se enfoca en los principales productos o servicios. 
+
+Estructura organizacionales por equipos
+	Se enfoca en los equipos o grupos de trabajo.
+
+Estructura organizacional virtual
+	Emplea a personas, grupos o unidades de negocio completas en areas geograficamente dispersas; puede durar unas cuantas semanas o años y a menudo requiere
+	servicios de telecomunicacion e internet.
+
+Cambio sostenido
+	Ayuda a una organizacion a mejorar el suministro de materias primas, el proceso de produccion y los bienes y servicios que produce
+
+cambio disruptivo
+	deteriora el desempeño de la organizacion e inclusive puede ocasionar su salida del mercado.
+
+Modelo del cambio
+	Representacion de las teorias del cambio que identifica sus fases y la mejor forma de implementarlas
+	-Descongelamiento: dejar los viejos habitos y generar un clima receptivo al cambio
+	-Movimiento	 : aprender los nuevos metodos, comportamientos y sistema de trabajo
+	-congelamiento	 : reforzamiento de los cambios para hacer del nuevo proceso una segunda naturaleza que sea aceptada y forme parte del trabajo.
+
+Aprendizaje organizacional
+	Adapatacion, a traves del tiempo, a las nuevas condiciones y a los cambios en las practicas organizacionales.
+
+Reingenieria
+	Rediseño radical de los procesos de negocios, de las estrucutras organizacionales, de los sistemas de informacion y de los valores institucionales
+	con el fin de mejorar los resultados de la empresa
+
+Mejora continua
+	Busqueda dconstante de formas para mejorar los procesos de negocio con el fin de agregar valor a los productos y servicios.
+
+Modelo de las cinco fuerzas
+	Factores clave que pueden llevar a obtener una ventaja competitiva.
+		-Rivalidad entre los competidores existentes
+		-Amenaza de nuevos competidores
+		-Amenaza de sustituir productos y servicios
+		-Capacidad de negociacion con los compradores
+		-Capacidad de negociacion con los proveedores
+
+Responsabilidades principales de los sitemas de informacion
+	Operacion
+		Operacion de instalacion de computo
+		Captura de datos
+		Operacion de la red area local
+		Operacion Web
+
+	Desarrollo de Sistemas
+		Analisis y diseño de sistema		
+		Programacion
+		Desarrollos en la web
+
+	Soporte
+		Compra de hardware y software
+		Administracion de datos
+		Capacitacion del usuario
+		Administracion de la web
+		Centro de informacion
+
+Puestos y Funciones en el area de sistemas de informacion
+	Director de informatica (CIO)
+		Vicrepresidente que establece las politicas a nivel corporativo y se encarga de la planeacion, administracion y comopra de los sistemas de info.
+	
+	Administradores de LAN
+		
+
+Componentes de Hardware
+	Dispositivos de entrada
+	Dispositivo de Procesamiento
+		Unidad Logica Aritmetica (ALU)
+			Calculos matematicos
+		Unidad DE control
+			accede a las instrucciones del programa, las decodifica y coordina el flujo de datos hacia y desde la ALU
+		areas de registro
+			are de almacenamiento de alta velocidad en la cpu que se utiliza para almacenar de forma temporal pequeñas unidades de instrucciones 
+		Memoria (almacenamiento principal)
+			almacena instrucciones de programas y datos inmediatamente antes o despue de los registros
+	Almacenamiento secundario
+	Dispositivos de salida
+
+Componentes de hardware en accion
+	La ejecucion de cualquier instruccion a nivel maquina involucra dos fases: Instruccion y ejecucion
+
+	Instruccion
+		Busqueda de la instruccion
+			La computadora lee la siguiente instruccion de programa que debe ejecutar y cualquier otro dato necesario a procesar
+		Decodificacion de la instruccion
+			La instruccion se decodifica y se manda al CPU
+	Tiempo De Instruccion (tiempo - I)
+		Tiempo que toma la busqueda y decodificacion de las instrucciones dentro la fase de instruccion
+
+	Ejecucion
+		Ejecucion de la instruccion
+			Ejecuta la instruccion
+		Almacenamiento de resultados
+			Los resultados se guardan en un registro de memoria
+	Tiempo de Ejecucion
+		Tiempo que toma la ejecucion de una instruccion y el almacenamiento de los resultados.
+
+Caracteristicas y funciones del procesamiento
+	Tiempo del ciclo de maquina
+		El tiempo de ciclo se mide en nanosegundos y picosegundos, o por en funcion del numero de instrucciones que se ejecuta en un segundo
+		MIPS
+			Millones de instrucciones por segundo, uhna medida de la duracion del ciclo de maquina
+
+	Velocidad de reloj
+		Serie de pulsos electronicos generados a una velocidad predeterminada que afecta la duracion del ciclo de maquina.
+
+
+A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 60-  book2
+
+Principales tipos de recursos
+	El gerente administrativo 5 tipos principales recursos.
+	Recursos Fisicos
+		-Personal
+		-Material
+		-Maquinaria
+		-Dinero
+	Recurso Conceptual
+		-Informacion
+
+Niveles gerenciales
+	-Nivel de planificacion estrategica
+	-Nivel de control gerencial
+	-Nivel de control operativo
+
+Habilidades gerenciales
+	-Comunicacion
+	-Resolucion de problemas
+
+Conocimientos Gerenciales
+	-Cultura computacional
+	-Cultura de la informacion
+
+Especialistas de informacion
+	-Analista de sistemas
+	-Administrador de base de datos
+	-Especialista en redes
+	-Programador
+	-Operador
+
+Ciclo de vida del sistem
+	-Planificacion
+	-Analisis
+	-Diseño
+	-Implementacion
+	-Uso
+
+Desarrollo de un sistema
+	-Analisis de sistema
+	-Diseño de sistema
+	-Programacion
+	-Prueba
+	-Conversion
+	-Produccion y mantenimiento
+
+Modelado y Diseño de sistemas
+	-Metodologia Estructurada
+		
+	-Orientada a Objetos
+
+Metodologias alternativas para cear sistemas
+	-Ciclo de vida de los sistemas tradicionales
+		Pasa en todas las fases
+	-Prototipos
+		Creacion de un sistema experimental con rapidez y a un bajo costo parq ue los usuarios finales lo evaluen
+	-Paquetes de software de aplicacion
+		Serian como Contpaq, Nomipaq, etc
+	-Desarrollo del usuario final
+		El usuario final desarrolla el sistema usando lenguajes de cuarta generacion.
+	-Subcontratacion (outsourcing)
+		Contratar a una firma exterior para que haga los sistemas que la empresa necesita.
+
+
+A2 - ANALISIS CUALITATIVO Y CUANTITATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+A2.1 - Análisis de la funcionalidad de los sistemas computacionales seleccionados   
+
