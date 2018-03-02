@@ -1,3 +1,6 @@
+CBIS	- Sistemas de informacion basados en computadoras.
+MIS	- Sistema de informacion Gerencial
+
 A - SELECCION DE SISTEMAS COMPUTACIONALES PARA APLICACIONES ESPECIFICAS
 A1 - INVESTIGACION DE LOS SITEMAS COMPUTACIONALES DISPONIBLES
 A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 22-58 book1
@@ -204,4 +207,57 @@ Metodologias alternativas para cear sistemas
 
 A2 - ANALISIS CUALITATIVO Y CUANTITATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
 A2.1 - Análisis de la funcionalidad de los sistemas computacionales seleccionados   
+
+Metodologias del ciclo de vida de los sistemas
+	Fase de planificacion
+	    Pasos de la planificacion
+		-Reconocer el problema
+		-Definir el problema
+		-Fijar los objetivos del sistema
+		-Identificar las restricciones del sistema
+		-Realizar un estudio de factibilidad
+		-Preparar una propuesta de estudio de sistema
+		-Aprobar o rechazar el proyecto de estudio.
+		-Establecer un mecanismo de control
+
+	Fase de Analisis
+		-Anunciar el estudio del sistema
+		-Organizar el equipo de proyecto
+		-Definir las necesidades de informacion
+		-Definir los criterios de desempeño del sistema
+		-Preparar la propuesta de diseño
+		-Aprobar o rechazar el proyecto de diseño
+
+	Fase de Diseño	
+		-Preparar el diseño de sistema detallado
+		-Identificar configuraciones alternativas del sistema
+		-Evaluar configuraciones alternativas del sistema
+		-Seleccionar la mejor configuracion
+		-Preparar la propuesta de implementacion
+		-Aprobar o rechazar la implementacion del sistema.
+
+	Fase de implementacion
+		-Planificar la implementacion
+		-Anunciar la implementacion
+		-Preparar base de datos
+		-Preparar la instalaciones fisicas
+		-Educar a los participantse y usuarios
+		-Preparar la propuesta de corte y cambio
+		-Aprobar o rechazar el corte y cambio al nuevo sistema
+		-Corte y cambio al nuevo sistema	
+			-Piloto
+				Se prueba solo en una oficina o un area geografica
+			-Inmediata
+				Cambio total del sistema viejo por el nuevo
+			-Por Fases
+				Se pone en uso parte por parte
+			-Paralela
+				Se mantienen los dos corriendo, el nuevo y el antiguo, cuando se de visto bueno de que el nuevo funciona se corta el antiguo
+
+	Fase de uso
+		-Usar el sistema
+		-Someter el sistema a auditoria
+		-Mantener el sistema
+		-Preparar una propuesta de reingenieria	
+		-Aprobar o rechazar la reingenieria del sistema
 
