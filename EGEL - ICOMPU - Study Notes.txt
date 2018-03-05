@@ -1,5 +1,7 @@
 CBIS	- Sistemas de informacion basados en computadoras.
 MIS	- Sistema de informacion Gerencial
+ISP	- Planificacion de Estrategia de Informacion
+IE	- Ingenieria de La Informacion
 
 A - SELECCION DE SISTEMAS COMPUTACIONALES PARA APLICACIONES ESPECIFICAS
 A1 - INVESTIGACION DE LOS SITEMAS COMPUTACIONALES DISPONIBLES
@@ -38,14 +40,14 @@ Estructura organizacionales por equipos
 	Se enfoca en los equipos o grupos de trabajo.
 
 Estructura organizacional virtual
-	Emplea a personas, grupos o unidades de negocio completas en areas geograficamente dispersas; puede durar unas cuantas semanas o a�os y a menudo requiere
+	Emplea a personas, grupos o unidades de negocio completas en areas geograficamente dispersas; puede durar unas cuantas semanas o años y a menudo requiere
 	servicios de telecomunicacion e internet.
 
 Cambio sostenido
 	Ayuda a una organizacion a mejorar el suministro de materias primas, el proceso de produccion y los bienes y servicios que produce
 
 cambio disruptivo
-	deteriora el desempe�o de la organizacion e inclusive puede ocasionar su salida del mercado.
+	deteriora el desempeño de la organizacion e inclusive puede ocasionar su salida del mercado.
 
 Modelo del cambio
 	Representacion de las teorias del cambio que identifica sus fases y la mejor forma de implementarlas
@@ -57,7 +59,7 @@ Aprendizaje organizacional
 	Adapatacion, a traves del tiempo, a las nuevas condiciones y a los cambios en las practicas organizacionales.
 
 Reingenieria
-	Redise�o radical de los procesos de negocios, de las estrucutras organizacionales, de los sistemas de informacion y de los valores institucionales
+	Rediseño radical de los procesos de negocios, de las estrucutras organizacionales, de los sistemas de informacion y de los valores institucionales
 	con el fin de mejorar los resultados de la empresa
 
 Mejora continua
@@ -79,7 +81,7 @@ Responsabilidades principales de los sitemas de informacion
 		Operacion Web
 
 	Desarrollo de Sistemas
-		Analisis y dise�o de sistema		
+		Analisis y diseño de sistema		
 		Programacion
 		Desarrollos en la web
 
@@ -105,7 +107,7 @@ Componentes de Hardware
 		Unidad DE control
 			accede a las instrucciones del programa, las decodifica y coordina el flujo de datos hacia y desde la ALU
 		areas de registro
-			are de almacenamiento de alta velocidad en la cpu que se utiliza para almacenar de forma temporal peque�as unidades de instrucciones 
+			are de almacenamiento de alta velocidad en la cpu que se utiliza para almacenar de forma temporal pequeñas unidades de instrucciones 
 		Memoria (almacenamiento principal)
 			almacena instrucciones de programas y datos inmediatamente antes o despue de los registros
 	Almacenamiento secundario
@@ -175,19 +177,19 @@ Especialistas de informacion
 Ciclo de vida del sistem
 	-Planificacion
 	-Analisis
-	-Dise�o
+	-Diseño
 	-Implementacion
 	-Uso
 
 Desarrollo de un sistema
 	-Analisis de sistema
-	-Dise�o de sistema
+	-Diseño de sistema
 	-Programacion
 	-Prueba
 	-Conversion
 	-Produccion y mantenimiento
 
-Modelado y Dise�o de sistemas
+Modelado y Diseño de sistemas
 	-Metodologia Estructurada
 		
 	-Orientada a Objetos
@@ -205,8 +207,10 @@ Metodologias alternativas para cear sistemas
 		Contratar a una firma exterior para que haga los sistemas que la empresa necesita.
 
 
+
 A2 - ANALISIS CUALITATIVO Y CUANTITATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
-A2.1 - An�lisis de la funcionalidad de los sistemas computacionales seleccionados   
+
+A2.1 - Análisis de la funcionalidad de los sistemas computacionales seleccionados   
 
 Metodologias del ciclo de vida de los sistemas
 	Fase de planificacion
@@ -224,12 +228,12 @@ Metodologias del ciclo de vida de los sistemas
 		-Anunciar el estudio del sistema
 		-Organizar el equipo de proyecto
 		-Definir las necesidades de informacion
-		-Definir los criterios de desempe�o del sistema
-		-Preparar la propuesta de dise�o
-		-Aprobar o rechazar el proyecto de dise�o
+		-Definir los criterios de desempeño del sistema
+		-Preparar la propuesta de diseño
+		-Aprobar o rechazar el proyecto de diseño
 
-	Fase de Dise�o	
-		-Preparar el dise�o de sistema detallado
+	Fase de Diseño	
+		-Preparar el diseño de sistema detallado
 		-Identificar configuraciones alternativas del sistema
 		-Evaluar configuraciones alternativas del sistema
 		-Seleccionar la mejor configuracion
@@ -261,3 +265,236 @@ Metodologias del ciclo de vida de los sistemas
 		-Preparar una propuesta de reingenieria	
 		-Aprobar o rechazar la reingenieria del sistema
 
+Los especialistas han modificado el Ciclo de Vida del Desarrollo de sistemas para reducir tiempos destacan estas dos opciones 
+Prototipos y Creacion de aplicaciones rapidas
+
+Prototipos
+	proporciona a los creadores y usuarios potenciales una idea de como funcionara el sistema cuando este terminado.
+	-Prototipo tipo I 
+		tarde o temprano se convierte en el sistema operacional
+			-Identificar las Necesidades del usuario
+			-Crear un prototipo 
+			-Determinar si el prototipo es aceptable.
+			-User el prototipo
+	-Prototipo tipo II
+		es un modelo desechable que sirve como plano detallado para el sistema operacional.
+			-Identificar las necesidades del usuario
+			-Crear el prototipo
+			-Determinar si el prototipo es aceptable
+			-Codificar el sistema operacional
+			-Probar el sistema operacional
+			-Determinar si el sistema operacional es aceptable
+			-Usar el sistema operacional.
+
+	Aplicaciones que son buenos prospectos para la creacion de prototipos
+		-Alto Riesgo
+		-Considerable interaccion con el usuario
+		-Grandes numeros de usuarios
+		-Necesidad de entrega rapida
+		-Fase de uso esperada del sistema corta
+		-Sistema innovador
+		-Comportamiento impredicible del usuario.
+		
+Creacion de Aplicaciones Rapidas
+	Ingredientes escenciales de la RAD
+		-Gerencia
+			Apoyo de la gerencia para aplicar RAD
+		-Personal
+			Creacion equipos especializados para cada area; planeacion, diseño, construccion.
+		-Metodologia
+			Ciclo de vida RAD: 
+				Planificacion de Necesidades
+				Diseño de Usuario
+				Construccion
+				Corte y cambio
+		-Herramientas
+			Lenguajes de cuarta generacion y herramientas CASE.
+
+CASE - Ingenieria de software asistida por computadora
+	Herramientas CASE superior
+		Utilizada por ejecutivos para planificacion estrategica
+	Herramientas CASE media
+		Utilizada en la fase de analisis y deseño, para documentar los procesos y datos
+	Herramientas CASE inferior
+		Utilizada en la fase de implementacion, ayuda a escribir probar y mantener codigo, conocida como generador de codigo
+	Herramientas CASE integrada
+		Combina herramientas CASE inferior, media y superior.
+		
+		
+A2.2 - COMPARACION DEL DESEMPEÑO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+
+Practicas esenciales de la Programacion Extrema
+	-Liberacion limitada
+		Liberal el software con lo escencial y poco a poco se le va agregando las mejoras
+	-Semanas de trabajo de 40 horas
+		Trabajar 40 horas a la semana extremas, con su descansos
+	-Cliente en el sitio
+		Se necesita tener disponibilidad del cliente en las horas laborables para cualquier duda
+	-Programacion en parejas
+		Equipos de dos para llevar a cabo una tarea entre ellos pueden surgir ideas.
+
+Roles de la programacion extrema XP
+	Programador
+	Cliente
+	Prueba
+	Rastreador
+	Entrenador
+	Consultor
+	Gran jefe lider
+	
+Etapas del proceso de desarrollo de Programacion Extrema XP
+	-Exploracion
+	-Planeacion
+	-Iteraciones a la primera version
+	-Puesta en produccion
+	-Mantenimineto
+	
+A2.3 - COMPARACION DE LOS COSTOS DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+
+Herramientas formales de planificacion y control
+	-Grafico de Gantt
+		 Lista las actividades del proyecto y sus correspondientes fechas de inicio y complecion.
+	-Diagrama PERT
+		Describe en forma grafica las tareas del proyecto y sus interrelaciones, es decir las taareas a completar antes de que se pueda iniciar una nueva actividad.
+		
+		
+A2.4 - COMPARACION DE LOS TIPOS DE SOPORTE TECNICO OFRECIDOS PARA CADA UNO DE LOS SISTEMAS SELECCIONADOS
+
+Mantenimiento del software
+	Correcccion de errores, adaptaciones y mejoras que se le deben de realizar al software que ya esta implementado.
+Soportabilidad de software
+	Soporte operativo en marcha
+	Soporte al usuario final
+		instalacion, operacion y uso de la aplicacion
+	Actividades de reingenieria
+Reingenieria
+	Creacion de grandes y novedosos sistemas basado en computo
+	La modificacion o reconstruccion de las aplicaciones existentes.
+Reingenieria de Procesos de Empresa RPE
+	Busqueda e implementacion de cambios radicales en los procesos de las empresas para lograr resultados innovadores.
+	Esta da como resultado nuevas funcionalidades de software
+Reingenieria de software
+	Actividad de reconstruccion del software.
+	
+	-Actividades de la reingenieria de software
+		-Analisis de inventarios
+			Iventario de todas las aplicaciones
+		-Reestructuracion de documentos
+			Documentar cada cambio que se haga en los sistmeas 
+		-Ingenieria Inversa
+			Proceso de analizar un programa con la intencion de crear la representacion del mismo en un nivel superior de abstraccion que el fuente.
+		-Reestructuracion de codigo
+			Reestructurar codigo a una manera mas sencilla o entendible
+		-Reestructuracion de datos
+		-Ingenieria hacia delante
+			Recupera informacion del diseño del software existente para mejorar su calidad global
+Ingenieria Inversa
+	Ingenieria Inversa para comprender datos
+		tal ves sea mover los datos almacenados en archivos planos a almacenarlos en base de datos.
+		-Estructura de datos interna
+			Definicion de clase de objectos; agrupar las variables del programa relacionadas
+		-Estructura de la base de datos
+			Reestructurar la bdd
+	Ingenieria Inversa para entender el procesamiento
+	Ingenieria Inversa de interfaces de usuarios
+Reestructuracion
+	modifica el codigo fuente y/o los datos con la intencion de hacerlos sensibles a cambios futuros.
+	-Reestructuracion de codigo
+		producir un diseño que produzca la misma funcion pero con mayor calidad que el programa original.
+	-Reestructuracion de datos
+		Consistencia entre nombre de item de datos o formato de registro fisico dentro de una estrucutra de datos existente o dentro de un formato de archivo.
+		racionalizacion de nombre de datos
+Ingenieria hacia delante
+	Para arquitecturas cliente-servidor
+	Para arquitecturas orientadas a objetos
+Economia de la Reingenieria
+
+
+A2.5 - IDENTIFICACION DE LOS ELEMENTOS DE UN ESTUDIO COMPARATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+Microprocesador
+	-Multiprocesamiento
+		Ejecucion simultanea de dos o mas instrucciones
+	-Coprocesador
+		Parte de la computadora que acelera el procesamiento mediante la ejecucion de tipos especificos de instrucciones
+	-Microprocesadores-Multinucleos
+		Combina dos o mas procesadores independientes en una sola computadora que pueden compartir la carga de trabajo y mejorar el procesamiento.
+	-Computo paralelo
+		Ejecucion simultanea de la misma tarea en multiples procesadores con el fin de obtener resultados mas rapidamente.
+	-Sistema de procesamiento masivamente paralelo
+		Conexion de cientos de miles de procesadores para que trabajen al mismo tiempo, o en paralelo.
+	-Computo en rejilla
+		Uso de un grupo de computadoras, que pueden ser proviedad del mismo o varios organizaciones, que trabajan de manera coordinada en la resolucion
+		de un problema en comun.
+	-Computo nube
+		Empleo de un grupo enorme de computadoras que sirve como un anfitrion para ejecutar aplicaciones que requieren computo de alto desempeño.
+		
+Memoria
+	bit - Unidad minima de almacenamiento
+	8 bits = byte
+	1024 byte = 1 kb
+	1024 kilobyte = 1 Mb
+	1024 Megabyte = 1 Gigabyte
+	
+	-Memoria RAM, SRAM, DRAM, DDR SDRAM
+		Forma de memoria en la que las instrucciones o datos pueden almancenarse de manera temporal, esta memoria es volatil.
+	-Memoria ROM, PROM, EPROM, EEPROM
+		Forma de memoria de solo lectura, no es volatil
+	-Memoria cache
+		Tipo de memoria de alta velocidad a la que el procesador puede acceder con mas rapidez que a la principal.
+
+Almacenamiento Secundario
+	Dispositivos que almacenan una gran cantidad de datos, instrucciones e informaciones de forma mas permanete que la memoria principal.
+	
+Dispositivos
+	Cintas magneticas
+	Discos Magneticos
+	RAID
+		Este genera bits extras de informacion con respecto a los datos existentes, lo que permite que el sistema genere un "mapa de reconstruccion"
+		de tal forma que si el disco duro falla, el sistema puede reconstruir los datos perdidos.
+	
+	Cinta Virtual
+	Discos Opticos	CD
+	Video Discos digitales	DVD  
+	Discos holograficos 	HVD
+
+Almacenamiento Coorporativo
+	Almacenamiento conectado
+		Conectados a una sola computadora para almacenar los datos, pueden ser cintas magneticas, discos duros.
+	Almacenamiento conectado a la red
+		Dispositivo que se conecta a una red en lugar de una computadora para almacenar los datos
+	Redes de Area de almacenamiento
+		Proporciona conexion a alta velocidad entre los dispositivos de almacenamiento de datos y computadoras a traves de una red.
+
+Dispositivos de entrada y salida
+	Dispositivos de entrada
+		Mouse
+		Teclado
+		Tecnologia de reconocimiento de voz
+		Camaras digitales
+		Terminales
+		Dispositivos de escaneo
+		Lectores opticos de datos
+		Dispositivo de reconocimiento de caracteres con tinta magnetica.
+		Tarjeta de Banda Magnetica
+		Dispositivo de punto de venta
+		Dispositivo de cajero automatico
+		Pantalla tactil
+		Dispositovo entrada tipo pluma
+		Escaner de codigo de barra
+		Idetinficacion por radio frecuencia
+	Dispositivo de salida
+		pantalla
+		Pantalla de Plasma
+		Plantalla de cristal liquido
+		impresoras y plotter
+		Reproductores de audio
+	Dispositivos entrada y salida de proposito especial
+		Libros electronicos
+		Pantallas de vision externa
+Tipos de sistema de computo
+	Computadoras de Mano
+	Computadoras portatiles
+	Ultra laptops
+		computadora que pesan menos de 3 libras  y pantalla de 13"
+	Table
+	Laptop de bajo costo
