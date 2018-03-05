@@ -498,3 +498,74 @@ Tipos de sistema de computo
 		computadora que pesan menos de 3 libras  y pantalla de 13"
 	Table
 	Laptop de bajo costo
+	
+Software de Sistema
+	Sistemas operativos
+		Commando
+		GUI
+		-Sistemas Operativos de grupo de trabajo
+			Uso de redes
+			velocidad de procesamiento
+			-Windows Server
+			-Unix
+			-NetWare
+			-Linux Red hat
+			-Os X Server de Mac
+		-Sistemas Operativos Empresariales
+			-z/Os
+			-HP-UX y Linux
+		-Sistemas Operativos de computadoras peque;as, computadoras integradas y dispositivos de proposito especial.
+			-Blackberry
+			-Sistem operativos palm
+			-Windows integrado
+			-Mobile de windows
+	-Programas de utilerias
+	-Utilerias de Hardware
+Software de aplicacion
+	Hojas de calculo
+	Worl
+		
+A3 - PROPUESTA DE LA SOLUCION PARA LA APLICACION ESPECIFICA
+A3.1 Selección del sistema computacional con base en los mejores índices (cualitativos y cuantitativos) de eficiencia y eficacia
+A3.2 Justificación de la selección del sistema computacional
+A3.3 Identificación de los elementos para realizar un estudio de factibilidad del sistema computacional
+
+Evaluacion en una Auditoria de sistemas computacionales
+	*Auditoria con la computadora
+		Se aprovecha la computadora y sus programas para la evaluacion de las actividades que se revisaran, de acuerdo con las necesidades concretas del auditor.
+		-Uso de la computadora y aplicaciones exclusivamente en auditorias de los sistemas computacionales de la empresa
+			-Auditoria del rendimiento y aprovecahmiento del hardware  y del software en las areas de sistemas.
+			-Auditoria a los metodos y sistemas de seguridad establecidos en el centro de computo
+			-Auditoria al rendimiento y aprovechamiento de los sistemas computacionales
+			-Auditoria a la productividad del procesamiento de informacion
+		-Auditoria con la computadora a las areas tradicionales
+			-Auditoria con el apoyo de paqueteria de aplicacion especifica para auditorias tradicionales
+			-Auditoria con el apoyo de paqueteria de aplicacion administrativa
+			-Auditoria con el apoyo de hojas electronicas de trabajo
+			-Auditoria con el apoyo de programas de base de datos
+			-Auditoria con el apoyo de paquetes contables
+			-Auditoria con el apoyo de diversas paqueterias
+		-Auditoria con la computadora y aplicaciones combinadas en los sistemas de computo y herramientas tradicionales
+			-Combinacion de las dos tecnicas anteriores.
+	*Auditoria sin computadora
+		-Auditoria a la actividad administrativa del centro de computo
+		-Auditoria a la gestion financiera del centro de computo
+		-Auditoria a las operaciones de los sistemas
+		-Auditoria al desarrollo de los proyectos de sistemas computacionales
+		-Auditoria a las tecnicas y sistema de procesamiento
+		-Auditoria a los sistemas de seguridad y prevencion de contingencias		
+		-Auditoria de los consumibles para el funcioamiento de los sistemas
+		-Auditoria del uso y acceso a los sistemas y programas comutacionales
+	*Auditoria a la gestion informatica del area de sistemas
+		-Auditoria a la planeacion estrategica en la empresa y el area de sistemas
+		-Auditoria a la estructgura de organizacion del area de sistemas
+		-Auditoria al cumplimiento de las funciones, tareas y operaciones de la actividad informatica en el area de sistemas
+		-Auditoria a la direccion del area de sistemas
+		-Auditoria a la administracion del factor humano en el area de sistemas
+		-Auditoria a la administracion de los recursos informaticos no humanosd del area de sistemas
+		-Auditoria a los controles informaticos del area de sistemas
+		-Evaluacion de la existencia, establecimiento y uso de los estandares de sistemas
+		-Auditoria a la documentacion de los sistemas en le area de informatica y a la documentacion de las demas areas de la empresa que cuenten con servicio informaticos
+	*Auditoria al sistema computacional
+		Evaluacion del funcionamiento y uso correcto del equipo de computo, asi como de su hardware, software y perifericos asociados.
+		-Auditoria al sistema computacional segun las caracteristicas de su hardware
