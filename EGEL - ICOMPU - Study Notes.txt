@@ -548,6 +548,7 @@ Evaluacion en una Auditoria de sistemas computacionales
 		-Auditoria con la computadora y aplicaciones combinadas en los sistemas de computo y herramientas tradicionales
 			-Combinacion de las dos tecnicas anteriores.
 	*Auditoria sin computadora
+		Auditoria cuyos metodos, tecnicas y procedimientos estan orientados unicamente a la evaluacion tradicional del comportamiento y valides de las transacciones economicas, admon y operacionales.
 		-Auditoria a la actividad administrativa del centro de computo
 		-Auditoria a la gestion financiera del centro de computo
 		-Auditoria a las operaciones de los sistemas
@@ -557,6 +558,7 @@ Evaluacion en una Auditoria de sistemas computacionales
 		-Auditoria de los consumibles para el funcioamiento de los sistemas
 		-Auditoria del uso y acceso a los sistemas y programas comutacionales
 	*Auditoria a la gestion informatica del area de sistemas
+		Se enfoca exclusivamente a la revision de las funciones y actividades de tipo administrativo que se realizan dentro de un centro de computo, tales como planeacion organizacion, direccion y control de dicho centro.
 		-Auditoria a la planeacion estrategica en la empresa y el area de sistemas
 		-Auditoria a la estructgura de organizacion del area de sistemas
 		-Auditoria al cumplimiento de las funciones, tareas y operaciones de la actividad informatica en el area de sistemas
@@ -569,3 +571,23 @@ Evaluacion en una Auditoria de sistemas computacionales
 	*Auditoria al sistema computacional
 		Evaluacion del funcionamiento y uso correcto del equipo de computo, asi como de su hardware, software y perifericos asociados.
 		-Auditoria al sistema computacional segun las caracteristicas de su hardware
+		-Auditoria al sistema computacional segun las caracteristicas de su software
+		-Auditoria al diseño logico del sistema
+		-Auditoria al diseño fisico del sistema
+		-Auditoria a la administracion y control de accesos y salidas de los datos
+		-Auditoria a la administracion y control del procesamiento de datos.
+		-Auditoria a los controles de almacenamiento.
+		-Auditoria a los controles de seguridad del sistema computacional.
+		-Auditoria a los controles adicionales para la operacion del sistema
+		-Auditoria a la administracion del area de sistemas computacionales
+		-Sugerencias de herramientas tecnicas y procedimientos aplicables en la auditoria de sistemas computacionales
+	*Auditoria alrededor de la computadora
+		A todo lo que esta alrededor de un equipo de computo; sistemas, actividades y funcionamiento
+		-Auditoria a la administracion del software de la empresa
+		-Auditoria a la configuraicon fisica del area de sistemas de la empresa
+		-Auditoria a los metodos de acceso, seguridad y salvaguarda de los activos informaticos del area de sistemas
+		-Auditoria a la adminstracion del area de sistemas
+		-Auditoria a los aspectos tecnicos del sistema
+		-Auditoria a la administracion del sistema.
+	*Auditoria de la seguridad de los sistemas computacionales
+		A todo lo relacionado con la seguridad de un sistema computacional, de su area y personal
