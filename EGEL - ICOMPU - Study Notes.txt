@@ -590,4 +590,44 @@ Evaluacion en una Auditoria de sistemas computacionales
 		-Auditoria a los aspectos tecnicos del sistema
 		-Auditoria a la administracion del sistema.
 	*Auditoria de la seguridad de los sistemas computacionales
-		A todo lo relacionado con la seguridad de un sistema computacional, de su area y personal
+		A todo lo relacionado con la seguridad de un sistema computacional, de su area y personal asi como a las actividades, funciones y acciones preventivas y correctivas
+		-Auditoria de la seguridad en las condiciones e instalaciones fisicas del area de sistemas
+		-Proteccion contra los riesgos y contigencias de orignal natural relacionadas con el media ambiente de trabajo
+		-Proteccion contra riesgos y contingencias relacionados con el medio ambiente de trabajo en las areas de sistemas de la empresa
+		-Proteccion contra riesgos y contingencias causados por factores meteorologicos, atmosfericos y desastres naturales incontrolables
+		-Proteccion contra riesgos y contingencias derivados del suministro de la energia electrica
+		-Proteccion contra riesgos y contingencias relacionados con el medio ambiente de trabjao en las areas de sistemas de la empresa
+		-Proteccion y seguridad de los espacios fisicos de las instalaciones de computo
+		-El analisis a los planes de contigencias informaticas
+		-Auditoria de la seguridad y proteccion en el dise;o de las instalaciones del area de sistremas de la empresa o empresas de computo
+		-Auditoria de la seguridad en los sistemas computacionales
+		-Auditoria en la seguridad del hardware
+		-Auditoria de la seguridad del software
+		-Auditoria de la seguridad en los sistemas computacionales
+		-Proteccion contra el mal uso de la informacion
+		-Proteccion contra la pirateria y robo de informacion
+		-Proteccion para el almacenamiento de la informacion
+		-Proteccion contra actos no intencionales
+		-Proteccion cvontra virus informaticos
+	*Auditoria en los sistemas de redes
+		Revision exhaustiva, especifica y especializada que se realiza a los sitemas de redes de una empresa.
+	*Auditoria outsourcing en los sistemas computacionales
+		Evaluar la calidad, eficiencia y oportunidad en el servicio de asesoria o procesamiento externo de informacion que proporciona una empresa a otra.
+	*Auditoria ISO-9000 a los sistemas computacionales.
+		Se realiza unicamente a los auditores especializados y certificados en las normas y procedimientos ISO-9000.
+	*Auditoria integral de los centros de computo
+		Evalua en forma integral, el uso adecuado de sus sistemas computacionales, perifericos y equipo de apoyo para el procesamiento de informacion de las empresas.
+		-Auditoria externa de sistemas computacionales
+		-Auditoria a la administracion interna dle area de sistemas
+		
+B - NUEVAS TECNOLOGIAS PARA LA IMPLEMENTACION DE SISTEMAS DE COMPUTO
+B1 - EVALUACION DE LAS LIMITACIONES DE LAS TECNOLOGIAS DE LOS SISTEMAS DE COMPUTO
+B1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS TECNOLOGICOS DE LA PROBLEMATICA POR RESOLVER Pag 332
+	
+
+
+B2 - DESARROLLO DE NUEVAS APLICACIONES TECNOLOGICAS DE SISTEMA DE COMPUTO
+
+B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
+
+B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
