@@ -630,10 +630,47 @@ B2.2 ANALISIS DE UNA NUEVA SOLUCION TECNOLOGICA PARA EL SISTEMA COMPUTACIONAL
 B2.3 DISEÑO DE LA NUEVA APLICACION UTILIZANDO LAS TECNOLOGIAS ADECUADAS
 Cuatro actividades basicas de la interaccion del diseño
 	Identificar las necesiadade y establecer requerimientos
-	Desarrollar dise;os alternativos que cumplan esos requerimientos
+	Desarrollar diseños alternativos que cumplan esos requerimientos
+		Diseño conceptual "Lo que el producto debe de hacer"
+		Dieño Fisico "Como se debe de ver"
 	Construir versiones interactivas del diseño
 	Evaluar los diseños
 
+Caracterisiticas a considerar en un diseño
+	-Efectividad (Hace todo lo que tiene que hacer)
+	-Eficiencia (Que tan bueno hace lo que tiene que hacer)
+	-Seguridad
+	-Utilidad (Cuantas funciones son usadas a la semana cuales al mes )
+	-Aprendibilidad (Que tanto toma aprender a un novato a hacer funciones)
+	-Memorabilidad (Si lo dejas de usar, que tan rapido el usuario recuerda las opciones y como llegar a ellas)
+
+Ciclo de vida de modelos
+	El Ciclo de vida del modelo de cascada
+		-Es un modelo lineal en el cual cada paso debe ser completado antes de empezar con el siguiente paso.
+		-Fue el primer modelo conocido en ingenieria de software.
+		-Analisis de requerimiento, Diseño, Codigo, Pruebas Y mantenimiento.
+	El ciclo de vida del modelo espiral
+		-Dos caracteristicas del model espiral clave son, riesgo de analisis y prototipos.
+		-Riesgo de analisis, prototipos, diseño del producto de sofware, validacion y verificacion del diseño, integracion y prueba.
+	Rapid Applications Development (RAD)
+		-Las dos caracteristicas importantes de los projectos RAD es:
+			-Tiempo limitado de ciclos de aproximadament seis meses, al final el sistema o parte del sistema debe ser entregado.
+			-JAD (Join Application Development) talleres en los que usuarios y desarrolladores se unen para discutir los requisitos del sistema.
+			-Project Initiation, JAD workshops, Iterative design and build, Evaluate final system, Implemetation review
+	El ciclo de vida del modelo de estrella
+		-Este no especifica un orden de actividades, estas actividades son interconectadas, se puede mover de una actividad a otra		
+	La usabilidad del ciclo de vida de la ingenieria
+		-Analisis de requerimiento
+		-Diseño/Prueba/Desarrollo
+		-Instalacion
+B2.4 MODELAR EL PROTOTIPO DE LA NUEVA APLICACION TECNOLOGICA
+Tipos de prototipos
+	Prototipos de parche
+		Construccion de un sitema funcional, parchado o construido totalmente en parches. Es un modelo funcional con todas las caracteristica necesarias pero ineficiente.
+	Prototipo No Operacional
+	Prototipo primero de una serie
+	Prototipo de caracteristicas selectas
+	
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
 
 B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
