@@ -663,13 +663,49 @@ Ciclo de vida de modelos
 		-Analisis de requerimiento
 		-Diseño/Prueba/Desarrollo
 		-Instalacion
+		
 B2.4 MODELAR EL PROTOTIPO DE LA NUEVA APLICACION TECNOLOGICA
 Tipos de prototipos
-	Prototipos de parche
+	-Prototipos de parche
 		Construccion de un sitema funcional, parchado o construido totalmente en parches. Es un modelo funcional con todas las caracteristica necesarias pero ineficiente.
-	Prototipo No Operacional
-	Prototipo primero de una serie
-	Prototipo de caracteristicas selectas
+	-Prototipo No Operacional
+		Modelo a escala no funcional, empleado para probar ciertos aspectos del diseño. e.g. Se hace un sistema con la idea de entrada y salida necesarias solamente. En este caso no se crea el prototipo de procesamiento, debido al costo excesivo y tiempos requeridos, los usuarios de todas formas podrian usar las entradas y salidas.
+	-Prototipo primero de una serie
+		Creacion de un modelo escala completa de un sistema, a lo que comunmente se le conoce como piloto. e.g. Se instala un modelo a escala completa en una tienda, antes de implementar el sistema en las demas, con el fin de que surjan los potenciales problemas para ahi resolverlos antes de expandirlos a otros puntos de venta.
+	-Prototipo de caracteristicas selectas
+		Esta incluye solo algunas caracteristicas del modelo final, e.g. el prototipo de un sistema mostraria a los usuarios un menu de pantallas con seis caracteristicas, aunque solo 3 de las 6 caracteristicas estarian habilitadas para usarse. 
+
+Lineamientos para desarrollar un prototipo
+	-Trabajar en modulos administrables
+		Un modulo administrable permite a los usuarios interactuar con sus caracteristicas clave y se pueda construir por separado
+	-Crear prototipos con rapidez.
+	-Hacer enfasis en la interfaz de usuario.
+
+Desvenetajas de los prototipos
+Ventajas de los prototipos
+	-Potencial de cambiar el sistema en sus primeras etapas de desarrollo
+	-La oportunidad de detener el desarrollo de en un sistema que no esta funcionando
+	-La posibilidad de desarrollar un sistema que cumpla mejor con las necesidades y expectativas de los usuario.
+
+Fases de RAD (Rapid Application Developmet)
+	-Fase de planeacion de los requerimientos,
+	-Taller de diseño RAD
+	-Fase de implementacion 
+
+Cuando usar RAD
+	-Cuando su equipo de trabajo tenga programadores y analistas con experiencia con este metodo y
+	-La empresa tenga motivos para presionar de manera que se pueda agilizar cierta parte del desarrollo de la aplicacion
+	-Cuando el equipo crea que la empresa puede tener ventaja considerable frente a sus competidores por ser innovadora si esta aplicacion esta entre las primera a aparecer.
+	-Cuando los usuarios sean sofisticados y se involucren mucho con los objetivos organizacionales de la empresa.
+	
+Modelado Agil
+	Programacion extrema XP o agil,
+	Valores del modelado Agil
+		-Comunicacion
+		-Simpleza
+		-Retroalimentacion
+		-Valor
+	
 	
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
 
