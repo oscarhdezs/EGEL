@@ -705,8 +705,51 @@ Modelado Agil
 		-Simpleza
 		-Retroalimentacion
 		-Valor
+
+Componentes de un modelo de proceso
+	-Arquitectura
+		Familia de sistemas (Tipo de sistemas):
+			-Transformacion en lote (batch). 
+				Sistemas de transformacion sobre un conjunto de entradas de valor constante, para generar un conjunto de salidas. e.g. compilador
+			-Transformacion continua.
+				Sistemas de transfromacion sobre un conjunto de entrada de valor variable, que genera un conjunto de salidas que difieren en el tiempo. e.g. Sistema de control de señales
+			-Sistemas interactivos.
+				Sistemas regidos por interacciones externas, por lo general, con un usuario. Son controlados por manejadores de eventos ecargados de procesar acontecimientos genrados por el usuario, como un click de raton o la presion de una tecla.
+			-Simulacion dinamica
+				Simulan entidades del mundo real y evolucionan con el tiempo. e.g. simuladores financieros, redes neuronales.
+			-Sistemas de teimpo real. 
+				Regidos por restricciones estrictas en el tiempo, que requieren garantias en el teimpo de respuesta. e.g. controladores de procesos industriales y dispositivos de comunicacion.
+			-Administracion de transaccion.
+				para interactuar con bases de datos y que incluyen, por lo general acceso concurrente y distribuido de multiples usuarios. e.g. Reservacion de vuelos y control de inventario.
 	
-	
+	-Actividad
+		Definen los pasos necesarios para lograr las metas y los objetivos.
+		Ciclo de vida del software
+			-Requisitos
+			-Analisis
+			-Diseño
+				-Diseño de objetos
+				-Diseño de sistemas
+			-Implementacion
+			-integracion
+			-pruebas
+			-documentacion
+			-mantenimiento.
+		Herramientas de modelado
+			-Diagramas de clase
+				Muestra relacion de asociacion entre clases y no flujo de datos entre ellas.
+			-Diagramas de caso de uso
+				Especifica un sistema en termino de su funcionalidad.
+			-Diagrama de transicion de estado
+				Describe cambios de estado en los objetos.
+			-Diagrama de secuencia
+				Muestra el flujo de eventos entre objetos en el tiempo.
+			-Diagrama de colaboracion
+				Se usan para describir la comunicacion entre objetos de un sistema.
+			-Diagrama de subsistemas
+				Se usan para describir agrupaciones de calses den un sistema.
+	-Estrategias
+		Un plan para lograr un objetivo.
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
 
 B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
