@@ -650,15 +650,22 @@ Ciclo de vida de modelos
 		-Fue el primer modelo conocido en ingenieria de software.
 		-Analisis de requerimiento, Diseño, Codigo, Pruebas Y mantenimiento.
 	El ciclo de vida del modelo espiral
+		-Extencion del modelo de cascada
 		-Dos caracteristicas del model espiral clave son, riesgo de analisis y prototipos.
 		-Riesgo de analisis, prototipos, diseño del producto de sofware, validacion y verificacion del diseño, integracion y prueba.
+	Modelo incremental
+		-Desarrollo inicial de la arquitectura completa del sistema, seguido de incrementos y versiones parciales del mismo, cada incremento tiene su ciclo de vida y agrega funcionalidad adicional o mejora sobre el sistema.
+	Modelo Evolucionario o RAD
+		-Extencion del modelo incremental donde los incrementos se hacen de manera secuencial en lugar de en paralelo.
 	Rapid Applications Development (RAD)
 		-Las dos caracteristicas importantes de los projectos RAD es:
 			-Tiempo limitado de ciclos de aproximadament seis meses, al final el sistema o parte del sistema debe ser entregado.
 			-JAD (Join Application Development) talleres en los que usuarios y desarrolladores se unen para discutir los requisitos del sistema.
 			-Project Initiation, JAD workshops, Iterative design and build, Evaluate final system, Implemetation review
 	El ciclo de vida del modelo de estrella
-		-Este no especifica un orden de actividades, estas actividades son interconectadas, se puede mover de una actividad a otra		
+		-Este no especifica un orden de actividades, estas actividades son interconectadas, se puede mover de una actividad a otra
+	Modelo Ganar Ganar
+		-Extinde al modelo espiral, haciendo enfasis en la identificacion de las condiciones de ganancia para todas las partes
 	La usabilidad del ciclo de vida de la ingenieria
 		-Analisis de requerimiento
 		-Diseño/Prueba/Desarrollo
@@ -750,6 +757,51 @@ Componentes de un modelo de proceso
 				Se usan para describir agrupaciones de calses den un sistema.
 	-Estrategias
 		Un plan para lograr un objetivo.
+Niveles de Madurez del proceso de software (CMM Capability Maturity Model)
+	Evaluar los procesos en sus niveles de madurez e identicar los niveles que una organizacion debe formar para establecer una cultura de excelencia en la ingenieria de software.
+	Inicial
+		Administracion riguroza del proyecto y asegurar la calidad
+	Repetible
+		Establecer un grupo y una arquitectura de proceso de desarrollo de software, introducir metoos y tecnologias de ing. de software.
+	Definido
+		establecer un conjunto basico de administraciones del proceso para identificar la calidad y costo de los parametros.
+	Administrado
+		apoyar la recopilacion automatica de datos del proceso
+	Optimizado
+		continuar mejorando y optimizando el proceso
+
+Organizaciones Internacionales para la Estandarizacion (ISO)
+	Hay algunos estandares aplicados para el desarrollo de software como se muestran a continuacion.
+	-ISO-9000
+		Familia de normas internacionales relacionadas con la administracion de la calidad en productos y servicios, la cual especifica que requisitos de calidad debe de cumplir pero no como. Existe ISO-9001 9002 9003, el que mas se enfoca en desarrollo de software es el 9001 ya que incluye actividades de diseño y desarrollo. 
+	-ISO-12207
+		Familia de normas internacionales relacionadas con la administracion de la calidad en los procesos del ciclo de vida del sofware.
+	-ISO-15504
+		Modelo de mejora del proceso de software y determinacion de capacidad.
+Modelo de Madurez de Ingenieria de Desempeño (PEMM Performance Engineer Maturity Model)
+	El modelo sirve tanto como para evaluar una organizacion como para mejorar los propios procesos de desarrollo. Esta al igual que la CMM cuenta con 5 niveles
+	
+TrickIT
+	Es una guia con estrategias para lograr la certificacion en la produccion de software segun los standares ISO-9000
+
+Proceso de Software personal (PSP Personal Software Process)
+	modelo para la mejora del proceso de desarrollo de software; basado en la creencia que la calidad del software depende del trabajo de cada uno de los ingenieros.
+
+Proceso de Software en equipos (TSP Team Software Process)
+	Extiende al PSP e integra los aspectos del desarrollo de software realizados por equipos de trabajo.
+
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
+B3.1 - ESTABLECIMIENTO DE LOS CRITERIOS DE PRUEBA DE LA NUEVA APLICACION TECNOLOGICA
+
+Tecnicas de pruebas
+	Pruebas de regresion.
+		Tiene como proposito verificar el sistema luego, de haberle introducido cambios, por ejemplo despues de corregir una falta, de manera que se mantenga la funcionalidad especificada originalmente.
+	Prueba de operacion.
+		Verificar el si
+
+B3.2 - Diseño del ambiente de trabajo para la simulación del prototipo
+ Modelar el ambiente de trabajo para la simulación del prototipo
+ Evaluación de la eficacia de la aplicación de la nueva aplicación tecnológica
+
 
 B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
