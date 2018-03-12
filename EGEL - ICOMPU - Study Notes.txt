@@ -839,10 +839,34 @@ Reglas doradas para las interfaces de usuario
 	-Reducir la necesidad de que el usuario memorice
 	-Hacer consistente la interfaz
 
-B4.2 Migración de la información a la nueva aplicación tecnológica
-B4.3 Realizar pruebas de campo de la nueva aplicación tecnológica
-B4.4 Elaboración de documentación de la nueva aplicación tecnológica
-B4.5 Capacitación a los usuarios de la nueva aplicación tecnológica
-B4.6 Implementación de los mecanismos de auditoría informática de la nueva aplicación
-tecnológica
-B4.7 Poner en funcionamiento la nueva aplicación tecnológica
+B4.2 MIGRACION DE LA INFORMACION A LA NUEVA APLICACION TECNOLOGICA
+B4.3 REALIZAR PRUEBAS DE CAMPO DE LA NUEVA APLICACION TECNOLOGICA
+B4.4 ELABORACION DE DOCUMENTACION DE LA NUEVA APLICACION TECNOLOGICA
+B4.5 CAPACITACION A LOS USUARIOS DE LA NUEVA APLICACION TECNOLOGICA
+B4.6 IMPLEMENTACION DE LOS MECANISMOS DE AUDITORIA INFORMATICA DE LA NUEVA APLICACION TECNOLOGICA
+B4.7 PONER EN FUNCIONAMEINTO LA NUEVA APLICACION TECNOLOGICA
+
+
+C - DESARROLLO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA APLICACIONES ESPECIFICAS
+C1 - ANALISIS DE LA PROBLEMATICA CON BASE EN UNA TECNOLOGIA
+C1.1 - IDENTIFICACION DE LA PROBLEMATICA TECNOLOGICA DE UNA APLICACION ESPECIFICA
+C1.2 - IDENTIFICACION DE LOS REQUERIMIENTOS HARDWARE Y SOFTWARE PARA LA APLICACION ESPEFICICA
+Ingenieria en requerimientos (areas)
+	Concepcion
+		Entendimiento basico del problema, las personas que quieren una solucion, la naturaleza de la solucion que se desea.
+	Indagacion
+		Los objetivos para el sistema o producto, que es lo que va lograrse, como se ajusta el sistema o producto a las necesidades del negocio
+	Elaboracion
+		Desarrollar un modelo refinado de los requerimientos que identifiquen distitntos aspectosde la funcion del software
+	Negociacion
+		Se pide a licentes, usuarios y otros participantes que ordenen sus requerimientos segun su prioridad y que despues analicen los conflictos.
+	Especificacion
+		Escenarios de uso
+	Validacion
+		analiza la especificacion a fin de garantizar que todos ellos han sido encunciado sin ambiguedades, validacion tecnica.
+	Administracion de los requerimientos
+		conjunto de actividades que ayudan al equipo del proyecto a identificar, controlar y dar seguimiento a los requerimientos y a sus cambios en cualquier momento del desarrollo del proyecto.
+		
+C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA
+C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA
+C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA
