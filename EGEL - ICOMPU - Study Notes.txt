@@ -790,6 +790,7 @@ Proceso de Software personal (PSP Personal Software Process)
 Proceso de Software en equipos (TSP Team Software Process)
 	Extiende al PSP e integra los aspectos del desarrollo de software realizados por equipos de trabajo.
 
+
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
 B3.1 - ESTABLECIMIENTO DE LOS CRITERIOS DE PRUEBA DE LA NUEVA APLICACION TECNOLOGICA
 
@@ -797,11 +798,51 @@ Tecnicas de pruebas
 	Pruebas de regresion.
 		Tiene como proposito verificar el sistema luego, de haberle introducido cambios, por ejemplo despues de corregir una falta, de manera que se mantenga la funcionalidad especificada originalmente.
 	Prueba de operacion.
-		Verificar el si
-
-B3.2 - Diseño del ambiente de trabajo para la simulación del prototipo
- Modelar el ambiente de trabajo para la simulación del prototipo
- Evaluación de la eficacia de la aplicación de la nueva aplicación tecnológica
+		Verificar el sistema en operacion por un largo periodo bajo condiciones normales de uso. Para medir la confiabilidad del sistema.
+	Prueba de escala completa.
+		Trata de verificar el sistema en su carga maxima mediante la asignacion de los parametros a su valor limite y la interconexion del sistema con un maximo de equipos y usuarios simultaneos.
+	Prueba de rendimiento
+		Tiene como proposito medir la capacidad de procesamiento del sistema bajo diferentes cargas, incluyendo espacio de almacenamiento y utilizacion de la memoria de procesamiento.
+	Prueba de sobrecarga
+		Pretende observar como se comporta el sistema cuando se le aplica una sobrecarga
+	Prueba negativa 
+		Tiene como proposito medir el estres del sistema, en situaciones inesperadas. El sistema se usa intencional y sistematicamente de forma incorrecta.
+	Prueba basada en requisito o en caso de uso
+		Pruebas basadas directamente en la especificacion de requisitos
+	Pruebas ergonomicas
+		Probar los aspectos ergonomicos del sistema en otras palabras las interfaces hombre-maquina.
+	Prueba de documentacion de usuario
+		Probar la documentacion del usuario, que los manuales sean congruentes con el sistema.
+	Prueba de aceptacion o de validacion
+		Pretende lograr una revision final por parte de la organizacion que solicito el sistema. lo cual a menudo significa validacion del sistema.
+		
+Niveles de Prueba
+	-Prueba de unidad 
+		Solo una unidad es probada como tal, una clase, una paquete de servicio, o un subsistema
+		-Prueba de especificaciones
+		-Prueba estructural
+		-Prueba basada en estados
+	-Prueba de integracion
+		Se Verifica que todas las unidades trabajen juntas correctamente aplicado a clases, paquetes de servicio, subsistem o sistema completo
+	-Prueba de sistema
+		Verifica el sistema completo o su aplicacion como tal.
+		
+B3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO
+B3.3 - MODELAR EL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO
+B3.4 - EVALUACION DE LA EFICACIA DE LA APLICACION DE LA NUEVA APLICACION TECNOLOGICA
 
 
 B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
+B4.1 - MODELAR INTERFACES CON LAS APLICACIONES EXISTENTES
+Reglas doradas para las interfaces de usuario
+	-Dejar el control al usuario
+	-Reducir la necesidad de que el usuario memorice
+	-Hacer consistente la interfaz
+
+B4.2 Migración de la información a la nueva aplicación tecnológica
+B4.3 Realizar pruebas de campo de la nueva aplicación tecnológica
+B4.4 Elaboración de documentación de la nueva aplicación tecnológica
+B4.5 Capacitación a los usuarios de la nueva aplicación tecnológica
+B4.6 Implementación de los mecanismos de auditoría informática de la nueva aplicación
+tecnológica
+B4.7 Poner en funcionamiento la nueva aplicación tecnológica
