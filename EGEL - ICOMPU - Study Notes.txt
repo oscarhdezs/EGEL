@@ -867,6 +867,19 @@ Ingenieria en requerimientos (areas)
 	Administracion de los requerimientos
 		conjunto de actividades que ayudan al equipo del proyecto a identificar, controlar y dar seguimiento a los requerimientos y a sus cambios en cualquier momento del desarrollo del proyecto.
 		
+Tipos de Modelos
+	-Modelos basados en escenarios de los requerimientos desde el punto de vista de distintos "actores" del sistema (Caso de uso, UML)
+	-Modelos de datos, que ilustran el dominio de la informacion del problema. (Si el sistema requiere la necesidad de crear, ampliar o hacer interfaz con una base de datos, estructuras complejas)
+	-Modelos orientados a clase, que representa clase orientada a objetos. (diagramas de clase, diagramas de colaboracion)
+	-Modelos orientados al flujo, que representan los elementos funcionales del sistema y la manera como transforman los datos a medida que se avanza a traves del sistema.(DFD, modelos de datos)
+	-Modelos de comportamiento, que ilustran el modo en el que se comparte el software como consecuencia de eventos externos. (Diagramas de estado, Diagramas de secuencia.)
+
+Diagrama de actividades UML
+	Representacion grafica del flujo de interaccion dentro de un escenario especifico. Similar al de flujo
+Diagrama de canal (swimlane) UML
+	Variacion ultil del diagrama de actividad uml, permite representar el flujo de actividades, descritas po el caso de uso; al mismo tiempo, indica que actor o clase de analisis es responsable de la accion descrita por un rectangulo de actividad. Las responsabilidades se representan con segmentos paralelos, que divide el diagrama en forma vertical, como carriles de alberca.
+	
+	
 C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA
 C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA
 C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA
