@@ -878,8 +878,51 @@ Diagrama de actividades UML
 	Representacion grafica del flujo de interaccion dentro de un escenario especifico. Similar al de flujo
 Diagrama de canal (swimlane) UML
 	Variacion ultil del diagrama de actividad uml, permite representar el flujo de actividades, descritas po el caso de uso; al mismo tiempo, indica que actor o clase de analisis es responsable de la accion descrita por un rectangulo de actividad. Las responsabilidades se representan con segmentos paralelos, que divide el diagrama en forma vertical, como carriles de alberca.
-	
-	
 C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA
 C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA
 C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA
+
+
+C2. DESARROLLO DEL MODELO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
+C2.1 - ELECCION DEL DISEÑO DEL HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
+
+Generos Arquitectonicos
+	Inteligencia Artificial
+	Comerciales y no lucrativos
+	Comunicaciones
+	Contenido de autor
+	Dispositivos
+	Entretenimiento y deportes
+	Financieros
+	Juegos
+	
+Estilos de arquitectura
+	Arquitecturas centradas en los datos.
+		Almacenamiento de datos(archivo o base de datos), al que acceden con frecuencia otros componentes que Actualizan, modifican, agregan o eliminan los datos.
+	Arquitectura de flujo de datos.
+		Se aplica cuando datos de entrada van a transformarse en datos de salida a traves de una serie de componentes computacionales o manipuladores. Espera una entrada de datos de cierta forma y produce datos de salida en una forma especifica.
+	Arquitectura de llamar y regresar.
+		Permite obtener una estructura de programa que es relativamente facil de modificar y escalar.
+		-Arquitecutras de programas principal/subprograma.
+			Una funcion en una jerarquia de control en la que un programa principal invoca ciertos numeros de components de programa que a su vez invocan otros.
+		-Arquitecturas de llamda de procedimiento remoto.
+			Las arquitecturas de programa principal/subprograma  esta distribuida a traves de computadoras multiples en una red.
+	Arquitectura orientada a objetos
+		Los componentes de un sistema incluyen datos y las operaciones que deben aplicarse para manipularlos. La comunicacion y coordinacion entre elos componentes se consigue mediante la transmision de mensajes.
+	Arquitectura en capas
+		Se define un numero de capas diferentes: cada una ejecuta operaciones que se aproximan progresivamente al conjunto de instrucciones maquina, en la capa externas los componentes atienden las operaciones de la interfaz de usuario. En la interna lso componentes realizan la interfaz con el sistema operativo, las intermedias proveen servicios de utilerias y funciones de soft app.
+	
+Patrones de arquitectura
+	Estos se abocan a un problema de aplicacion especifica dentro de un contexto dado y sujeto a limitaciones y restricciones, el patron propone una solucion arquitectonica que sirve como base para el diseño de la arquitectura.
+
+Complejidad arquitectonica
+	Para medir la complejidad general de una arquitectura propuesta es considerar las dependencias entre los componentes dentro de la arquitectura.
+	-Dependencias compartidas
+		relacion entre consumidores que usan los mismos recursos o productos que producen para los mismo consumidores. e. g. para dos componentes u y v si u y v se refieren a los mismos datos globales, entonces existe una relacion de dependencia compratida.
+	-Dependencias de flujo
+		relaciones de dependencia entre productores y consumidores de recursos. e. g. dos componentes u y v si u debe completarse para que el control pase a v, o si u se comunica con v por medio de parametros, entonces existe una relacion de dependencia de flujos entre u y v.
+	-Dependencia de restricciones
+		 restricciones en el flujo relativo del control entre un conjunto de actividades, e. g. si dos componentes u y v no pueden ejecutarse al mismo tiempo, entonces existe una relacion de dependencia de restriccion entre u y v.
+
+C2.2 - MODELAR EL PROTOTIPO DE HARDWARE CON LAS CARACTERISTICAS REQUERIDAS
+C.2.3 - DESARROLLO DE SOFTWARE QUE HAGA FUNCIONAL AL HARDWARE DEL SISTEMA
