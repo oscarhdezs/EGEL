@@ -924,5 +924,25 @@ Complejidad arquitectonica
 	-Dependencia de restricciones
 		 restricciones en el flujo relativo del control entre un conjunto de actividades, e. g. si dos componentes u y v no pueden ejecutarse al mismo tiempo, entonces existe una relacion de dependencia de restriccion entre u y v.
 
+Transductor es cualquier dispositivo que convierta una señal de un tipo en una señal de otro tipo. Tipos de señales pueden ser: electrica, magnetica, mecanica, molecular, optica y termica.
+
+Caracteristicas de un sensor
+	Exactitud
+	Fidelidad
+	Sensibilidad
+	Linealidad
+		Linealidad independiente (Minimos Cuadrados)
+		Linealidad ajustada a ceros (Minimos Cuadrados ajustado a ceros)
+		Linealidad Terminal
+		Linealidad A traves de los extremos
+		Teorica
+		
+Errores sistematicos
+	estos se pueden descubrir, midiendo la misma magnitud con dos aparatos distitntos, o con dos metodos distintos, o dando las lecturas dos operarios distitintos, o cambiando de forma ordenada dlas condiciones de mendida y viendo su efecto en el resultado
+
+Errores Aleatorios
+	Son los que permanecen una vez eliminadas las causas de errores sistematicos.
+
+
 C2.2 - MODELAR EL PROTOTIPO DE HARDWARE CON LAS CARACTERISTICAS REQUERIDAS
 C.2.3 - DESARROLLO DE SOFTWARE QUE HAGA FUNCIONAL AL HARDWARE DEL SISTEMA
