@@ -926,6 +926,14 @@ Complejidad arquitectonica
 
 Transductor es cualquier dispositivo que convierta una señal de un tipo en una señal de otro tipo. Tipos de señales pueden ser: electrica, magnetica, mecanica, molecular, optica y termica.
 
+Sensor
+	Dispositivo que nos permite medir alguna caracteristica del ambiente, como la tempearatura, distancia, poscion, sonido, velocidad, rotacion, etc.
+	
+Los sensores se clasifican en
+	-Analogo o Digital
+	-Interno o externo
+	-Pasivos  o activos
+	
 Caracteristicas de un sensor
 	Exactitud
 	Fidelidad
@@ -943,6 +951,71 @@ Errores sistematicos
 Errores Aleatorios
 	Son los que permanecen una vez eliminadas las causas de errores sistematicos.
 
+Sistemas de Medida de orden 0
+	Es aquel cuya salida esta relacionada con la entrada mediante una ecuacion del tipo   y(t) = k x(t)
+
+Sistema de Medida de primer orden
+	Hay un elemento que almacena energia y otro que la disipa. La relacion entre la entrada x(t) y la salida y(t) viene adda por una ecuacion diferencial del tipo.
+	
+Sistema de medida de segundo orden
+	Es aquel que incluye dos elementos que almacenan energia y otros dos que la disipan. 
+
+Tipos de Sensores
+	-Sensores de temperatura (biometales)
+	-Sensores de presion
+	-Sensores de flujo y caudal
+	-Sensores de nivel
+	-Sensores de fuerza y par
+
+Materiales utilizados en los sensores
+	-Conductor
+	-Semiconductor
+	-Aislante
+
+Tecnicas de preparacion de materiales para microsensores
+	-Tecnica de pelicula gruesa
+		emplea pastas o tintas que contienen dispersos metales ordinarios o nobles, de modo que pueden ser condurctoras, resistivas o dielectricas.
+	-Tecnica de pelicula fina
+		se obtiene mediante deposicion al vacio sobre un sustrato de alumina pulida de muy alta pureza o vidrios de baja alcalinidad.
+	-Micromecanizado
+		Conjunto de procesos para producir componentes micromecanicos tridimensionales.
 
 C2.2 - MODELAR EL PROTOTIPO DE HARDWARE CON LAS CARACTERISTICAS REQUERIDAS
+Microcontrolador
+	Circuito integrado programable que contiene todos los componentes de un computador. Se emplea para controlar el funcionamiento de una tarea determinada y, debido a su reducido tamaño, suele ir incorporado en el propio dispositivo al que gobierna.
+	Es un sistema cerrado que contiene un computador completo y de prestaciones limitadas que no se pueden modificar.
+
+Microprocesador
+	Es un sistema abierto con el que puede construirse un computador con las caracteristicas que se desee, acoplandole los modulos necesarios.
+Diferencia entre microprocesador y microcontrolador
+	El microporcesador es un circuito integrado que contiene la Unidad Central de Proceso (UCP procesador), 
+	
+Definicion
+	Una formula inventada para un nuevo concepto
+Ley	
+	Una formula para una relacion de la naturaleza
+Derivacion
+	una formula producida matematicamente
 C.2.3 - DESARROLLO DE SOFTWARE QUE HAGA FUNCIONAL AL HARDWARE DEL SISTEMA
+
+
+C3 - EVALUACION DEL MODELO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
+C 3.1 - ESTABLECIMIENTO DE LOS CRITERIOS EFICIENCIA Y EFICACIA PARA EVALUAR EL SISTEMA DESARROLLADO 
+C 3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO DEL SISTEMA 
+C 3.3 - MODELAR EL AMBIETE DE TRABAJO PARA LA SIMULACION DEL PROTOTITPO DEL SISTEMA
+C 3.4 - EVALUACION DEL PROTOTIPO DEL SISTEMA CON BASE EN LOS CRITERIOS DE EFICACIA Y EFICIENCIA PREESTABLECIDOS
+
+
+D4 - ADAPTACION DE HARDWARE Y/O SOFTWARE PARA APLICACIONES ESPECIFICAS
+
+D 4.1 - ANALISIS DE LA FUNCIONALIDAD DEL SISTEMA
+D 4.1.1 - IDENTIFICACION DE LAS FUNCIONES ACTUALES DEL SISTEMA QUE CUMPLEN CON EL RENDIMIENTO ADECUADO
+D 4.1.2 - IDENTIFICACION DE LOS PUNTOS CRITICOS DEL SISTEMA Y REQUERIMIENTOS DE MEJORA 
+D 4.1.3 - SELECCION DE LOS CRITERIOS PARA CUBRIR LA FACTIBILIDAD DE LOS REQUERIMIENTOS
+
+
+
+D 4.2 - SOLUCION Y EVALUACION DE LA ADAPTACION DEL SISTEMA DE HARDWARE Y/O SOFTWARE
+D 4.2.1 - ELECCION DEL DISEÑO DE HARDWARE Y SOFTWARE QUE IMPLEMENTA LA MEJORA PROPUESTA
+D 4.2.2 - SELECCION DE LOS ASPECTOS DEL SOFTWARE QUE HACE FUNCIONAL AL SISTEMA
+D 4.2.3 - IDENTIFICACION DE LOS CRITERIOS DE EFICACIA Y EFICIENCIA DE LAS ADAPATACIONES AL SISTEMA
