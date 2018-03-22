@@ -1031,25 +1031,6 @@ D 4.3.4 - IDENTIFICACION DEL AS POLITICAS DE USO Y GESTION DEL NUEVO SISTEMA
 E -  REDES DE COMPUTO PARA NECESIDADES ESPECIFICAS
 E1 - ANALISIS DE LAS TECNOLOGIAS QUE INTEGRAN UNA RED DE COMPUTO
 E1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LA RED DE COMPUTO 
-E1.2 - IDENTIFICACION DE LAS ARQUITECTURAS DE LAS REDES DE COMPUTO, PROTOCOLOS DE COMUNICACION, HARDWARE Y SOFTWARE DE RED PARA NECESIDADES ESPECIFICAS
-
-
-E1.3 - DETERMINACION DE LA FACTIBILIDAD TECNICA Y ECONOMICA PARA CUMPLIR LOS REQUERIMIENTOS DE LA RED DE COMPUTO
-E1.4 - ELABORACION DE LA PROPUESTA DE SOLUCION DE LA RED DE COMPUTO PARA NECESIDADES ESPECIFICAS
-
-
-E2 - PROPUESTAS DE SOLUCIONES DE LAS REDES DE COMPUTO PARA NECESIDADES ESPECIFICAS
-E 2.1 - PROPUESTA DE LAS ACTIVIDADES PARA LA INSTALACION DE LA RED DE COMPUTO PARA UNA APLICACION ESPECIFICA
-E 2.2 - FORMULACION DE LA CONFIGURACION DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
-E 2.3 - PLANTEAR LAS PRUEBAS DE DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPEFICIAS
-E 2.4 - DEFINICION DE LOS MECANISMOS DE AUDITORIA DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
-
-
-E3 - EVALUACION DEL DESEMPEÑO DE LA RED DE COMPUTO
-E 3.1 - MONITOREO DEL DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
-E 3.2 - IDENTIFICACION DE LAS POSIBLES MEJORAS DEL DESEMPLEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
-E 3.3 - IDENTIFICACION DEL ORIGEN DE FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
-E 3.4 - PROPONER LA CORRECCION DE LAS FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
 
 Redes de acceso
 	Acceso telefonico (dial up)
@@ -1098,4 +1079,60 @@ Medios Fisicos
 		
 Conmutacion de Circutios y Conmutacion de paquetes
 	-Conmutacion de Circuitos
+		Se establece una conexion dedicada desde el host A al host B, tiene desventaja de que el canal de comunicacion esta ocupado aun cuando no se trasmite nada desde el nodo A al nodo B
+	-Conmutacion en paquetes
 		
+Tipos de Retardos en el envio de paquetes
+	Retardo de procesamiento
+		Tiempo requerido en examinar la cabecera del paquete y determinar donde hay que enviarlo.
+		Tiempo necesario para comprobar los errores de nivel de bit del paquete que se producen al transmitir los bits del paquete desde el nodo anterior al router.
+	
+	Retardo De cola
+		-En la cola el paquete experimenta un retardo de cola al tener que esperar para ser transmitido a traves del enlace.
+	Retardo De Transmision 
+		-Los paquetes se transiten en el orden del primero que llega es el primero que sale, el paquete es transmitido despues de que todos los paquetes que hayan llegado antes que el hayan sido transmitidos.
+		-Es el tiempo necesario para transmitir todos los bits del paquete por el enlace.
+	Retardo De propagacion
+		-Una vez que un bit ha entrado en el enlace, tiene que propagarse hasta el router B, El tiempo necesario para propagarse desde el principio del enlace hasta el router B es el retardo de propagacion.
+		
+Perdida de paquete
+	Cuando se transmite un paquete llega a la cola de paquetes y esta llena, si no hay sitio donde almacenar el paqute el router la elimina.
+
+E1.2 - IDENTIFICACION DE LAS ARQUITECTURAS DE LAS REDES DE COMPUTO, PROTOCOLOS DE COMUNICACION, HARDWARE Y SOFTWARE DE RED PARA NECESIDADES ESPECIFICAS
+Capa de Aplicacion
+	Es donde residen las aplicaciones de red y sus protocolos (HTTP, SMTP, FTP).
+Capa de Transporte
+	Transporta los mensajes de la capa de aplicacion entre los puntos terminales de la aplicacion. En internet existen dos protocolos de transporte TCP y UDP.
+Capa de Red 
+	Es responsable de transladar los paquetes, de la capa de red, conocidos como datagramas de un host a otro. Incluye el protocolo IP.
+	La capa de red encamina un datagrama a traves de una serie de routers entre el origen y le destino.
+Capa De Enlace
+	Para transladar un paquete de un nodo al siguiente nodo de la ruta, la capa de red confia en los servicios de la capa de enlace
+Capa Fisica
+	se refiere a las transformaciones que se le hacen a la secuencia de bits para trasmitirlos de un lugar a otro. 
+Capa de Presentacion
+	Proporcionar servicios que permitan a las aplicaciones que se comunican interpretar el significado de los datos intercambiados
+	como compresion y cifrado.
+Capa Sesion
+	delimitar y sincronizar el intercambio de datos.
+Modelo OSI
+
+E1.3 - DETERMINACION DE LA FACTIBILIDAD TECNICA Y ECONOMICA PARA CUMPLIR LOS REQUERIMIENTOS DE LA RED DE COMPUTO
+E1.4 - ELABORACION DE LA PROPUESTA DE SOLUCION DE LA RED DE COMPUTO PARA NECESIDADES ESPECIFICAS
+
+
+E2 - PROPUESTAS DE SOLUCIONES DE LAS REDES DE COMPUTO PARA NECESIDADES ESPECIFICAS
+E 2.1 - PROPUESTA DE LAS ACTIVIDADES PARA LA INSTALACION DE LA RED DE COMPUTO PARA UNA APLICACION ESPECIFICA
+E 2.2 - FORMULACION DE LA CONFIGURACION DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 2.3 - PLANTEAR LAS PRUEBAS DE DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPEFICIAS
+E 2.4 - DEFINICION DE LOS MECANISMOS DE AUDITORIA DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+
+
+E3 - EVALUACION DEL DESEMPEÑO DE LA RED DE COMPUTO
+E 3.1 - MONITOREO DEL DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.2 - IDENTIFICACION DE LAS POSIBLES MEJORAS DEL DESEMPLEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.3 - IDENTIFICACION DEL ORIGEN DE FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.4 - PROPONER LA CORRECCION DE LAS FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+
+
+	
