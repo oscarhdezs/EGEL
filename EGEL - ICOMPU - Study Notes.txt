@@ -1019,3 +1019,83 @@ D 4.2 - SOLUCION Y EVALUACION DE LA ADAPTACION DEL SISTEMA DE HARDWARE Y/O SOFTW
 D 4.2.1 - ELECCION DEL DISEÑO DE HARDWARE Y SOFTWARE QUE IMPLEMENTA LA MEJORA PROPUESTA
 D 4.2.2 - SELECCION DE LOS ASPECTOS DEL SOFTWARE QUE HACE FUNCIONAL AL SISTEMA
 D 4.2.3 - IDENTIFICACION DE LOS CRITERIOS DE EFICACIA Y EFICIENCIA DE LAS ADAPATACIONES AL SISTEMA
+
+
+D 4.3 - IMPLEMENTACION DE LA MODIFICACIONES DESARROLLADAS
+D 4.3.1 - IDENTIFICACION DE LOS PARAMETROS ESENCIALES PARA EL DISEÑO DE LAS INTERFACES DE UN SISTEMA DE HARDWARE Y/O SOFTWARE
+D 4.3.2 - SELECCION DE LOS CRITERIOS PARA MIGRAR LA INFORMACION DE LA APLICACION EXISTENTE A LA NUEVA
+D 4.3.3 - SELECCION DE LOS CRITERIOS PARA LAS PRUEBAS DE CAMPO A LAS ADAPTACIONES DEL SISTEMA
+D 4.3.4 - IDENTIFICACION DEL AS POLITICAS DE USO Y GESTION DEL NUEVO SISTEMA
+
+
+E -  REDES DE COMPUTO PARA NECESIDADES ESPECIFICAS
+E1 - ANALISIS DE LAS TECNOLOGIAS QUE INTEGRAN UNA RED DE COMPUTO
+E1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LA RED DE COMPUTO 
+E1.2 - IDENTIFICACION DE LAS ARQUITECTURAS DE LAS REDES DE COMPUTO, PROTOCOLOS DE COMUNICACION, HARDWARE Y SOFTWARE DE RED PARA NECESIDADES ESPECIFICAS
+
+
+E1.3 - DETERMINACION DE LA FACTIBILIDAD TECNICA Y ECONOMICA PARA CUMPLIR LOS REQUERIMIENTOS DE LA RED DE COMPUTO
+E1.4 - ELABORACION DE LA PROPUESTA DE SOLUCION DE LA RED DE COMPUTO PARA NECESIDADES ESPECIFICAS
+
+
+E2 - PROPUESTAS DE SOLUCIONES DE LAS REDES DE COMPUTO PARA NECESIDADES ESPECIFICAS
+E 2.1 - PROPUESTA DE LAS ACTIVIDADES PARA LA INSTALACION DE LA RED DE COMPUTO PARA UNA APLICACION ESPECIFICA
+E 2.2 - FORMULACION DE LA CONFIGURACION DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 2.3 - PLANTEAR LAS PRUEBAS DE DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPEFICIAS
+E 2.4 - DEFINICION DE LOS MECANISMOS DE AUDITORIA DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+
+
+E3 - EVALUACION DEL DESEMPEÑO DE LA RED DE COMPUTO
+E 3.1 - MONITOREO DEL DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.2 - IDENTIFICACION DE LAS POSIBLES MEJORAS DEL DESEMPLEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.3 - IDENTIFICACION DEL ORIGEN DE FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+E 3.4 - PROPONER LA CORRECCION DE LAS FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
+
+Redes de acceso
+	Acceso telefonico (dial up)
+		-Velocidad maxima es 56 kpbs
+		-Mientras se usa para internet no se puede realizar llamadas telefonicas porque ocupa la linea.
+	
+	DSL (Digital Subscriber Line)
+		-Puede recibir y transmitir datos a velocidades muchas mas altas que dial-up  (1-2Mb download, 128kbps - 1Mb upload)
+		-Con DSL el usuario puede hablar por telefono y navegar en internet al mismo tiempo.
+		
+	Cable
+	Tecnologia FTTH (Fiber-To-The-Home) Fibra Optica	
+		-Velocidad de download 10-20 Mbps
+		-Velocidad de upload   2-10 Mbps
+	Ethernet
+		-Velocidad de 100Mbps
+		-Servidores 1Gbps - 10Gbps
+	
+	Wifi
+		-EIII 802.11 (Wifi)
+	
+	Acceso inalambrico de area extensa (3G)
+
+Medios Fisicos
+	Cable de cobre de par trenzado
+		Consta de dos hilos de cobre aislados, de un milimetro de espesor que sigue un patron regular en espiral.
+		Cable UTP para redes LAN
+		Cable par trenzado para dial-up
+		cable par trenzado para DSL
+		
+	Cable coaxial
+		Consta de dos conductores de cobre, pero dispuestos de forma concentrica en lugar de en paralelo.
+		Internet por cable
+		
+	Fibra optica
+		Medio flexible y de poco espesor que conduce pulsos de luz, representando cada pulso un bit.
+		Es inmune a las interferencias electromagneticas.
+		
+	Canales de radio terrestre
+		Transportan señales en el espectro electromagnetico.
+		Constituyen un medio atractivo porque no requeiren la instalacion de cables fisicos, pueden atravesar paredes.
+	
+	Canales de radio via satelite
+		Satelites geoestacionarios; estan permanentemente situados en el mismo punto por encima de la tierra.
+		Satelites de orbita baja terrestre se colocan mucho mas cerca de la tierra y no se encuentran permanetemente en la misma posicion. si no que gieran alrededor de la tierra y pueden comunicarse entre si.
+		
+Conmutacion de Circutios y Conmutacion de paquetes
+	-Conmutacion de Circuitos
+		
