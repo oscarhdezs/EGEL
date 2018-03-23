@@ -1117,6 +1117,23 @@ Capa Sesion
 	delimitar y sincronizar el intercambio de datos.
 Modelo OSI
 
+Tecnologias de transmicion
+	Enlaces Punto a punto
+		Unidifusion (unicasting) Transmicion punto a punto donde solo hay un emisor y en receptor
+	Enlaces de difucion (BroadCast)
+		Todas las maquinas en la red comparten el canal de comunicacion; los paquetes que envia una maquina son recibidas por todos los demas. Un campo de direccion en el paquete especifica a quien se dirije, Cuando una maquina recibe un paquete verifica el campo de direccion si el paquete esta destinado a la maquina receptora esta proesa el pequete, si no esta destinado esta la ignora.
+		
+Redes PAN (Personal Area Network)
+	Bluetooth para conectar mouse, teclado u otros dispositivos mediante esta red
+Redes LAN
+	Son redes de propiedad privada que operan dentro de un mismo edificio, como casa oficina o fabrica.
+Redes de Area Metropolitana MAN
+	Este tipo de redes cubre toda una ciudad, un ejemplo podria ser las redes de television por cable.
+Redes de Area Amplia (WAN)
+	Abarca una extensa area geografica por lo general un pais o un continente.
+	Podria ser la red de telefonia celular
+	
+
 E1.3 - DETERMINACION DE LA FACTIBILIDAD TECNICA Y ECONOMICA PARA CUMPLIR LOS REQUERIMIENTOS DE LA RED DE COMPUTO
 E1.4 - ELABORACION DE LA PROPUESTA DE SOLUCION DE LA RED DE COMPUTO PARA NECESIDADES ESPECIFICAS
 
