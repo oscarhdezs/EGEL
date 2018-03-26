@@ -5,7 +5,7 @@ IE	- Ingenieria de La Informacion
 
 A - SELECCION DE SISTEMAS COMPUTACIONALES PARA APLICACIONES ESPECIFICAS
 A1 - INVESTIGACION DE LOS SITEMAS COMPUTACIONALES DISPONIBLES
-A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 22-58 book1
+A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 19-79 book1
 
 CAdena de valor
 	Serie de actividades que incluye logistica interna, bodegas y almacenamiento, produccion, almacenamiento del producto terminado, 
@@ -142,7 +142,7 @@ Caracteristicas y funciones del procesamiento
 		Serie de pulsos electronicos generados a una velocidad predeterminada que afecta la duracion del ciclo de maquina.
 
 
-A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 60-  book2
+A1.2 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 80-  book2
 
 Principales tipos de recursos
 	El gerente administrativo 5 tipos principales recursos.
