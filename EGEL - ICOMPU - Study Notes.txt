@@ -1102,12 +1102,15 @@ E1.2 - IDENTIFICACION DE LAS ARQUITECTURAS DE LAS REDES DE COMPUTO, PROTOCOLOS D
 Capa de Aplicacion
 	Es donde residen las aplicaciones de red y sus protocolos (HTTP, SMTP, FTP).
 Capa de Transporte
-	Transporta los mensajes de la capa de aplicacion entre los puntos terminales de la aplicacion. En internet existen dos protocolos de transporte TCP y UDP.
+	Transporta los mensajes de la capa de aplicacion entre los puntos terminales de la aplicacion. En internet existen dos protocolos de transporte TCP y UDP. entrega de origen a destino de mensajes
+	Proporciona entrega fiable de mensajes y recuperacion de errores de extremo a extremo
 Capa de Red 
-	Es responsable de transladar los paquetes, de la capa de red, conocidos como datagramas de un host a otro. Incluye el protocolo IP.
+	Es responsable de transladar los paquetes, de la capa de red, conocidos como datagramas de un host a otro. Incluye el protocolo IP. dentrega de origen a destino de paquetes
 	La capa de red encamina un datagrama a traves de una serie de routers entre el origen y le destino.
+	Mover paqutes de origen a destino, proporcionar conexion entre redes
 Capa De Enlace
 	Para transladar un paquete de un nodo al siguiente nodo de la ruta, la capa de red confia en los servicios de la capa de enlace
+	Organiza los bits en tramas proporciona entrega de modo a modo.
 Capa Fisica
 	se refiere a las transformaciones que se le hacen a la secuencia de bits para trasmitirlos de un lugar a otro. 
 Capa de Presentacion
@@ -1115,6 +1118,8 @@ Capa de Presentacion
 	como compresion y cifrado.
 Capa Sesion
 	delimitar y sincronizar el intercambio de datos.
+Capa Presentacion
+	Traducir, cifrar y comprimir datos.
 Modelo OSI
 
 Tecnologias de transmicion
@@ -1132,7 +1137,52 @@ Redes de Area Metropolitana MAN
 Redes de Area Amplia (WAN)
 	Abarca una extensa area geografica por lo general un pais o un continente.
 	Podria ser la red de telefonia celular
+HUB
+	Si contamos con un Hub de 24 bocas e ingresa un paquete de informacion por la boca 1, este paquete es transmitido por las 23 bocas restantes, la informacion, es decir cuando se envia informacion del puerto 1 al puerto x, el paquete es transmitido a todos los puertos
+	No controla ni previene la colision de informacion, por lo que es imposible tener simultainidad en la transferencia de informacion
+	Trabaja en la capa Fisica
+	Es broadcast
+	Comparte el ancho de banda entre todos los puertos
 	
+Switch
+	Los switch trabajan en modo full duplex lo cual permite la simultainidad de envio y recepcion. asi se evita la colision de paquetes y se incrementa la velocidad de transferencia.
+	El switch en ves de mandar los datos a todas las pc consulta a una tabla de direcciones y lo manda al equipo que corresponde.
+	El swithc arma una tabla de direccione MAC que esta formada por dos elementos: el numero de puerto donde esta conectado el host y asociado a el la direccion MAC del host conectado a ese puerto del switch.
+	Trabaja en la capa de Enlace
+	Multicast
+	Dedica el ancho de banda a cada puerto
+	
+Router
+	Trabaja en la capa de Red.
+	El router es un dispositivo de borde es decir separa las redes internas o privadas, de las externas o publicas. Un router conecta una red con otra red.
+
+Los protocoles NAT y PAT conviertes las direcciones de red privadas a direcciones de red publicas
+
+Clase de redes
+Clase A
+	Se usa para redes muy grandes como una gran compañia internacioal
+	rango de 1-127 
+	0.0.0.0 - 127.255.255.255 - 255.0.0.0
+	
+Clase B
+	Se utiliza para redes de tamaño mediano, por ejemplo campus de universidad
+	rango de 128-191
+	128.0.0.0 - 128.255.255.255 - 255.255.0.0
+	
+Clase C
+	Negocios pequeños a mediano tamaño tipo lan
+	rango de 192-223
+	192.0.0.0 - 192.255.255.255 - 255.255.255.0 
+	
+Clase D
+	Utilizado para multicast
+	rango de 224-239
+	224.0.0.0 - 224.255.255.255
+	
+Clase E 
+	Para propositos experimentales
+	rango de 240-247
+	240.0.0.0 - 240.255.255.255
 
 E1.3 - DETERMINACION DE LA FACTIBILIDAD TECNICA Y ECONOMICA PARA CUMPLIR LOS REQUERIMIENTOS DE LA RED DE COMPUTO
 E1.4 - ELABORACION DE LA PROPUESTA DE SOLUCION DE LA RED DE COMPUTO PARA NECESIDADES ESPECIFICAS
@@ -1142,6 +1192,12 @@ E2 - PROPUESTAS DE SOLUCIONES DE LAS REDES DE COMPUTO PARA NECESIDADES ESPECIFIC
 E 2.1 - PROPUESTA DE LAS ACTIVIDADES PARA LA INSTALACION DE LA RED DE COMPUTO PARA UNA APLICACION ESPECIFICA
 E 2.2 - FORMULACION DE LA CONFIGURACION DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
 E 2.3 - PLANTEAR LAS PRUEBAS DE DESEMPEÑO DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPEFICIAS
+Medicion del desempeño de la red
+	 Asegurese que el tamaño de la muestra no sea bastante grande
+	 Asegurese de que las muestras sean repetitivas
+	 La cache puede arruniar las mediciones
+	 Asegurese de que no ocurra nada inesperado durante sus pruebas
+
 E 2.4 - DEFINICION DE LOS MECANISMOS DE AUDITORIA DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
 
 
@@ -1151,5 +1207,23 @@ E 3.2 - IDENTIFICACION DE LAS POSIBLES MEJORAS DEL DESEMPLEÑO DE LA RED DE COMP
 E 3.3 - IDENTIFICACION DEL ORIGEN DE FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
 E 3.4 - PROPONER LA CORRECCION DE LAS FALLAS OPERATIVAS DE LA RED DE COMPUTO PARA LAS NECESIDADES ESPECIFICAS
 
+Analizador Léxico.
+Es un programa que recibe como entrada el codigo fuente de otro programa (secuencia de caracteres) y produce una salida compuesta de tokens (componentes lexicos o simbolos). Estos tokens sirve para una posterior etapa del proceso de traduccion, siendo la entrada para le analizador sintáctico.
+
+
+Profundidad-primero
+
+Secuencia de recorrido de preorden: F, B, A, D, C, E, G, I, H (raíz, izquierda, derecha)
+Secuencia de recorrido de inorden: A, B, C, D, E, F, G, H, I (izquierda, raíz, derecha); note cómo esto produce una secuencia ordenada
+Secuencia de recorrido de postorden: A, C, E, D, B, H, I, G, F (izquierda, derecha, raíz)
+Anchura-primero
+
+Secuencia de recorrido de orden por nivel: F, B, G, A, D, I, C, E, H
+
+						F
+						
+				B				G
+			A		D				I
+				C		E		H
 
 	
