@@ -8,9 +8,7 @@ A1 - INVESTIGACION DE LOS SITEMAS COMPUTACIONALES DISPONIBLES
 A1.1 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 19-79 book1
 
 CAdena de valor
-	Serie de actividades que incluye logistica interna, bodegas y almacenamiento, produccion, almacenamiento del producto terminado, 
-	logistica externa, marketing y ventas, y servicio al cliente.
-
+	Serie de actividades que incluye logistica interna, bodegas y almacenamiento, produccion, almacenamiento del producto terminado, logistica externa, marketing y ventas, y servicio al cliente.
 
 La combinacion de cadena de valor y el inventario JIT significa que las empresas pueden entregar materiales o partes cuando se necesiten.
 
@@ -21,17 +19,13 @@ Administracion corriente bajo
 	Administracion del almacenamiento de producto terminado, logistica externa, marketing y ventas y servicio al cliente.
 
 Administracion de cadena de suministros
-	Determina la mercancia que requiere la cadena de valor, las cantidades necesarias para satisfacer la demanda del cliente, la forma en que deben 
-	procesarse los suministros para obtener bienes y servicios terminados y la forma en que deben programarse supervisarse y controlarse la entrega 
-	de productos y suministros a los clientes. 
+	Determina la mercancia que requiere la cadena de valor, las cantidades necesarias para satisfacer la demanda del cliente, la forma en que deben procesarse los suministros para obtener bienes y servicios terminados y la forma en que deben programarse supervisarse y controlarse la entrega de productos y suministros a los clientes. 
 
 Estructura organizacional tradicional (Estructura Jerarquica)
-	Piramide administrativa donde la jerarquia de la toma de decisiones y la autoridad fluye desde la cupula estrategica ubicada en la parte superior 
-	hasta la gerencia operativa y los empleados sin puesto gerencial.
+	Piramide administrativa donde la jerarquia de la toma de decisiones y la autoridad fluye desde la cupula estrategica ubicada en la parte superior hasta la gerencia operativa y los empleados sin puesto gerencial. Esta formada de la siguietne manera como piramide. (Administracion estrategica, Gerencia tactica, Gerencia Operativa, Empleados sin cargo gerencial)
 
 Estructura organizacional plana
-	otorga autoridad a los empleados de los niveles mas bajos para que tomen decisiones, esto es, resuelvan problemas sin solicitar permiso a los gerentes
-	de nivel medio
+	otorga autoridad a los empleados de los niveles mas bajos para que tomen decisiones, esto es, resuelvan problemas sin solicitar permiso a los gerentes de nivel medio
 
 Estructura organizacionales por proyecto 
 	Se enfoca en los principales productos o servicios. 
@@ -40,11 +34,10 @@ Estructura organizacionales por equipos
 	Se enfoca en los equipos o grupos de trabajo.
 
 Estructura organizacional virtual
-	Emplea a personas, grupos o unidades de negocio completas en areas geograficamente dispersas; puede durar unas cuantas semanas o años y a menudo requiere
-	servicios de telecomunicacion e internet.
+	Emplea a personas, grupos o unidades de negocio completas en areas geograficamente dispersas; puede durar unas cuantas semanas o años y a menudo requiere servicios de telecomunicacion e internet.
 
 Cambio sostenido
-	Ayuda a una organizacion a mejorar el suministro de materias primas, el proceso de produccion y los bienes y servicios que produce
+	Ayuda a una organizacion a mejorar el suministro de materias primas, el proceso de produccion y los bienes y servicios que produce.
 
 cambio disruptivo
 	deteriora el desempeño de la organizacion e inclusive puede ocasionar su salida del mercado.
@@ -59,11 +52,13 @@ Aprendizaje organizacional
 	Adapatacion, a traves del tiempo, a las nuevas condiciones y a los cambios en las practicas organizacionales.
 
 Reingenieria
-	Rediseño radical de los procesos de negocios, de las estrucutras organizacionales, de los sistemas de informacion y de los valores institucionales
-	con el fin de mejorar los resultados de la empresa
+	Rediseño radical de los procesos de negocios, de las estrucutras organizacionales, de los sistemas de informacion y de los valores institucionales con el fin de mejorar los resultados de la empresa
 
 Mejora continua
-	Busqueda dconstante de formas para mejorar los procesos de negocio con el fin de agregar valor a los productos y servicios.
+	Busqueda constante de formas para mejorar los procesos de negocio con el fin de agregar valor a los productos y servicios.
+
+Ventaja Competitiva
+	Beneficio muy importante a largo plazo de una compañia con respecto a su competencia.
 
 Modelo de las cinco fuerzas
 	Factores clave que pueden llevar a obtener una ventaja competitiva.
@@ -72,6 +67,11 @@ Modelo de las cinco fuerzas
 		-Amenaza de sustituir productos y servicios
 		-Capacidad de negociacion con los compradores
 		-Capacidad de negociacion con los proveedores
+
+Etapas en el uso de los sistemas de informacion por las empresas
+	-Reduccion de costos y productividad
+	-Ventaja competitiva
+	-Administracion basada en el desempeño.
 
 Responsabilidades principales de los sitemas de informacion
 	Operacion
@@ -107,7 +107,7 @@ Componentes de Hardware
 		Unidad DE control
 			accede a las instrucciones del programa, las decodifica y coordina el flujo de datos hacia y desde la ALU
 		areas de registro
-			are de almacenamiento de alta velocidad en la cpu que se utiliza para almacenar de forma temporal pequeñas unidades de instrucciones 
+			area de almacenamiento de alta velocidad en la cpu que se utiliza para almacenar de forma temporal pequeñas unidades de instrucciones 
 		Memoria (almacenamiento principal)
 			almacena instrucciones de programas y datos inmediatamente antes o despue de los registros
 	Almacenamiento secundario
@@ -141,8 +141,9 @@ Caracteristicas y funciones del procesamiento
 	Velocidad de reloj
 		Serie de pulsos electronicos generados a una velocidad predeterminada que afecta la duracion del ciclo de maquina.
 
+Ley De Moore
+	Hipotesis que sostiene que la densidad de trnasistores en un circuito integrado se duplica cada dos años.
 
-A1.2 - IDENTIFICACION DE LOS REQUERIMIENTOS DE LOS SISTEMAS COMPUTACIONALES DE UNA APLICACION ESPECIFICA   PAGE 80-  book2
 
 Principales tipos de recursos
 	El gerente administrativo 5 tipos principales recursos.
@@ -180,7 +181,34 @@ Ciclo de vida del sistem
 	-Diseño
 	-Implementacion
 	-Uso
+	
+	
+A1.2 - IDENTIFICACION DE LAS CARACTERISTICAS INDISPENSABLES DEL SISTEMA COMPUTACIONAL PARA UNA APLICACION ESPECIFICA   80
+A1.3 - ESTABLECIMIENTO DE LOS PARAMETROS FUNCIONALES QUE EL SISTEMA COMPUTACIONAL DEBE CUMPLIR				81
+A1.4 - SELECCION DE LOS SISTEMAS COMPUTACIONALES QUE CUMPLAN CON LAS CARACTERISTICAS REQUERIDAS				81
 
+El analisis de sistemas describe lo que deberia hacer un sistema para cumplir con los requerimientos de informacion.
+El diseño de sistemas muestra como cumplira con este objetivo.
+
+Existen diferentes tipos de prueba estos puedan ser
+	Prueba de Unidad
+		Consiste en probar cada programa por separado en el sistema
+	Prueba de sistema
+		Evalua el funcionamiento del sistema de informacion como un todo
+	Prueba de aceptacion
+		Provee la certificacion final de que el sistema esta listo para usarse en un entorno de produccion.
+		
+Conversion
+	Proceso de cambiar del sistema anterior al nuevo. existen cuatro estrategias principales de conversion.
+	-Estrategia paralela
+		Tanto el sistema anterior como su reemplazo se operan en concjunto durante un timpo, hasta que todos esten seguros de que el nuevo funciona de manera correcta.
+	-Estrategia de reemplazo directo
+		Se sustituye el sistema anterior en su totalidad con el nuevo, en un dia programado con anterioridad
+	-Estrategia de estudio piloto
+		Se introduce el nuevo sistema a solo un area limitada de la organizacion, como un solo departamento o una sola unidad operacional. cuando esta completa y trabaja de manera uniforme, se instala el resto de la misma manera.
+	-Estrategia de metodologia en fases
+		Introduce el nuevo sistema en etapas, ya sea con base en las funciones o las unidades organizaciones.
+	
 Desarrollo de un sistema
 	-Analisis de sistema
 	-Diseño de sistema
@@ -191,26 +219,48 @@ Desarrollo de un sistema
 
 Modelado y Diseño de sistemas
 	-Metodologia Estructurada
+		Se utilizan para documentar, analizar y diseñar sistemas de informacion, estructurado se refiere al hecho de que las tecnicas son paso a paso, en donde cada movimiento se basa en el movimiento anterior. Son de arriba hacia abajo. Estos son orientados a procesos. La principal herramientas para representar los procesos components de un sistema y el flujo de datos entre ellos es el diagrama de flujo de datos (DFD)
+		El diseño se software se modela mediante el uso de diagramas de estructura jerarquica, El diagrama de estructura es un diagrama arriba abajo que muestra cada nivel de diseño.
 		
 	-Orientada a Objetos
-
+		Utiliza el objeto como la unidad basica del analisis y diseño de sistema. Un objecto combina datos y los proceso especificos que operan sobre ellos.
+		El sistema se modela como una coleccion de objectos y la relacion entre ellos
+	
+Ingenieria de software auxiliada por computadora (CASE)	
+	Herramientas de software para automatizar las metodologias para reducir la cantidad de trabajo repetitivo que necesita realizar el desarrollador.
+	Estas cuantan con herramientas de graficos automatizadas para producir tablas y diagramas, generadores de pantallas e informes, diccionarios de datos, herramientas para informes extensos, herramientas de analisis y comprobacion, generadores de codigo y generadores de documentacion.
+	
 Metodologias alternativas para cear sistemas
 	-Ciclo de vida de los sistemas tradicionales
 		Pasa en todas las fases
 	-Prototipos
 		Creacion de un sistema experimental con rapidez y a un bajo costo parq ue los usuarios finales lo evaluen
-	-Paquetes de software de aplicacion
-		Serian como Contpaq, Nomipaq, etc
+		Pasos para la creacion de un prototipo
+			-Identificar los requerimientos basicos del usuario
+			-Desarrollar un prototipo inicial
+			-Usar el prototipo
+			-Revisar y mejorar el prototipo
 	-Desarrollo del usuario final
 		El usuario final desarrolla el sistema usando lenguajes de cuarta generacion.
+		Categorias de lenguajes de cuarta generacion
+			-Lenguajes de Consulta
+				SQL
+			-Generadores de informes
+				Crystal Reports
+			-Lenguajes de graficos
+				SAS/Graph, Systat
+			-Generadores de aplicaciones
+				WebFOCUS, QuickBase
+			-Paquetes de software de aplicacion
+				mySAP ERP, Oracle PeopleSoft HCM				
+			-Lenguajes de programa de muy alto nivel.
+				APL, Nomad2
 	-Subcontratacion (outsourcing)
 		Contratar a una firma exterior para que haga los sistemas que la empresa necesita.
 
 
-
 A2 - ANALISIS CUALITATIVO Y CUANTITATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
-
-A2.1 - Análisis de la funcionalidad de los sistemas computacionales seleccionados   
+A2.1 - Análisis de la funcionalidad de los sistemas computacionales seleccionados   				99 - 133
 
 Metodologias del ciclo de vida de los sistemas
 	Fase de planificacion
@@ -321,7 +371,7 @@ CASE - Ingenieria de software asistida por computadora
 		Combina herramientas CASE inferior, media y superior.
 		
 		
-A2.2 - COMPARACION DEL DESEMPEÑO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+A2.2 - COMPARACION DEL DESEMPEÑO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS					134 - 141
 
 Practicas esenciales de la Programacion Extrema
 	-Liberacion limitada
@@ -349,7 +399,7 @@ Etapas del proceso de desarrollo de Programacion Extrema XP
 	-Puesta en produccion
 	-Mantenimineto
 	
-A2.3 - COMPARACION DE LOS COSTOS DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+A2.3 - COMPARACION DE LOS COSTOS DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS					142 - 153
 
 Herramientas formales de planificacion y control
 	-Grafico de Gantt
@@ -358,7 +408,7 @@ Herramientas formales de planificacion y control
 		Describe en forma grafica las tareas del proyecto y sus interrelaciones, es decir las taareas a completar antes de que se pueda iniciar una nueva actividad.
 		
 		
-A2.4 - COMPARACION DE LOS TIPOS DE SOPORTE TECNICO OFRECIDOS PARA CADA UNO DE LOS SISTEMAS SELECCIONADOS
+A2.4 - COMPARACION DE LOS TIPOS DE SOPORTE TECNICO OFRECIDOS PARA CADA UNO DE LOS SISTEMAS SELECCIONADOS	154 - 173
 
 Mantenimiento del software
 	Correcccion de errores, adaptaciones y mejoras que se le deben de realizar al software que ya esta implementado.
@@ -386,6 +436,7 @@ Reingenieria de software
 		-Reestructuracion de codigo
 			Reestructurar codigo a una manera mas sencilla o entendible
 		-Reestructuracion de datos
+			Tal ves el sistema usa archivos planos para guardar datos seria conveniente cambiarlo a base de datos.
 		-Ingenieria hacia delante
 			Recupera informacion del diseño del software existente para mejorar su calidad global
 Ingenieria Inversa
@@ -410,7 +461,7 @@ Ingenieria hacia delante
 Economia de la Reingenieria
 
 
-A2.5 - IDENTIFICACION DE LOS ELEMENTOS DE UN ESTUDIO COMPARATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS
+A2.5 - IDENTIFICACION DE LOS ELEMENTOS DE UN ESTUDIO COMPARATIVO DE LOS SISTEMAS COMPUTACIONALES SELECCIONADOS		174-215
 Microprocesador
 	-Multiprocesamiento
 		Ejecucion simultanea de dos o mas instrucciones
@@ -423,8 +474,7 @@ Microprocesador
 	-Sistema de procesamiento masivamente paralelo
 		Conexion de cientos de miles de procesadores para que trabajen al mismo tiempo, o en paralelo.
 	-Computo en rejilla
-		Uso de un grupo de computadoras, que pueden ser proviedad del mismo o varios organizaciones, que trabajan de manera coordinada en la resolucion
-		de un problema en comun.
+		Uso de un grupo de computadoras, que pueden ser proviedad del mismo o varios organizaciones, que trabajan de manera coordinada en la resolucion de un problema en comun.
 	-Computo nube
 		Empleo de un grupo enorme de computadoras que sirve como un anfitrion para ejecutar aplicaciones que requieren computo de alto desempeño.
 		
@@ -449,8 +499,7 @@ Dispositivos
 	Cintas magneticas
 	Discos Magneticos
 	RAID
-		Este genera bits extras de informacion con respecto a los datos existentes, lo que permite que el sistema genere un "mapa de reconstruccion"
-		de tal forma que si el disco duro falla, el sistema puede reconstruir los datos perdidos.
+		Este genera bits extras de informacion con respecto a los datos existentes, lo que permite que el sistema genere un "mapa de reconstruccion" de tal forma que si el disco duro falla, el sistema puede reconstruir los datos perdidos.
 	
 	Cinta Virtual
 	Discos Opticos	CD
