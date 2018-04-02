@@ -684,7 +684,7 @@ Cuatro actividades basicas de la interaccion del diseño
 	Identificar las necesiadade y establecer requerimientos
 	Desarrollar diseños alternativos que cumplan esos requerimientos
 		Diseño conceptual "Lo que el producto debe de hacer"
-		Dieño Fisico "Como se debe de ver"
+		Diseño Fisico "Como se debe de ver"
 	Construir versiones interactivas del diseño
 	Evaluar los diseños
 
@@ -723,7 +723,7 @@ Ciclo de vida de modelos
 		-Diseño/Prueba/Desarrollo
 		-Instalacion
 		
-B2.4 MODELAR EL PROTOTIPO DE LA NUEVA APLICACION TECNOLOGICA							Pag 365
+B2.4 MODELAR EL PROTOTIPO DE LA NUEVA APLICACION TECNOLOGICA							Pag 365 - 420
 Tipos de prototipos
 	-Prototipos de parche
 		Construccion de un sitema funcional, parchado o construido totalmente en parches. Es un modelo funcional con todas las caracteristica necesarias pero ineficiente.
@@ -776,7 +776,7 @@ Componentes de un modelo de proceso
 				Sistemas regidos por interacciones externas, por lo general, con un usuario. Son controlados por manejadores de eventos ecargados de procesar acontecimientos genrados por el usuario, como un click de raton o la presion de una tecla.
 			-Simulacion dinamica
 				Simulan entidades del mundo real y evolucionan con el tiempo. e.g. simuladores financieros, redes neuronales.
-			-Sistemas de teimpo real. 
+			-Sistemas de tiempo real. 
 				Regidos por restricciones estrictas en el tiempo, que requieren garantias en el teimpo de respuesta. e.g. controladores de procesos industriales y dispositivos de comunicacion.
 			-Administracion de transaccion.
 				para interactuar con bases de datos y que incluyen, por lo general acceso concurrente y distribuido de multiples usuarios. e.g. Reservacion de vuelos y control de inventario.
@@ -844,7 +844,7 @@ Proceso de Software en equipos (TSP Team Software Process)
 
 
 B3 - EVALUACION DE LAS FUNCIONALIDAD DE LA NUEVA APLICACION TECNOLOGICA
-B3.1 - ESTABLECIMIENTO DE LOS CRITERIOS DE PRUEBA DE LA NUEVA APLICACION TECNOLOGICA
+B3.1 - ESTABLECIMIENTO DE LOS CRITERIOS DE PRUEBA DE LA NUEVA APLICACION TECNOLOGICA				Pag 421 - 431
 
 Tecnicas de pruebas
 	Pruebas de regresion.
@@ -878,31 +878,39 @@ Niveles de Prueba
 		Se Verifica que todas las unidades trabajen juntas correctamente aplicado a clases, paquetes de servicio, subsistem o sistema completo
 	-Prueba de sistema
 		Verifica el sistema completo o su aplicacion como tal.
+
+Estrategia de prueba
+	-Orden de prueba
+		Definir en que momento y en que ordense aplicaran las pruebas.
+	-Alcance de prueba
+		Identifica el tipo, numero y caso de pruebas que se aplicaran para reivsar los diferentes aspectos del sistema.
+	-Automatizacion de pruebas
+		reducir el esfuerzo y costo de las pruebas mediante la automatizacion del proceso o aspectos de el.
 		
-B3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO
-B3.3 - MODELAR EL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO
-B3.4 - EVALUACION DE LA EFICACIA DE LA APLICACION DE LA NUEVA APLICACION TECNOLOGICA
+B3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO						Pag 432 - 435
+B3.3 - MODELAR EL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO						Pag 436 - 438
+B3.4 - EVALUACION DE LA EFICACIA DE LA APLICACION DE LA NUEVA APLICACION TECNOLOGICA				Pag 439 - 442
 
 
 B4 - IMPLEMENTACION DE LA APLICACION TECNOLOGICA DEL SISTEMA DE COMPUTO
-B4.1 - MODELAR INTERFACES CON LAS APLICACIONES EXISTENTES
-Reglas doradas para las interfaces de usuario
+B4.1 - MODELAR INTERFACES CON LAS APLICACIONES EXISTENTES							Pag 443 - 476
+Reglas doradas para las interfaces de usuario				
 	-Dejar el control al usuario
 	-Reducir la necesidad de que el usuario memorice
 	-Hacer consistente la interfaz
 
-B4.2 MIGRACION DE LA INFORMACION A LA NUEVA APLICACION TECNOLOGICA
-B4.3 REALIZAR PRUEBAS DE CAMPO DE LA NUEVA APLICACION TECNOLOGICA
-B4.4 ELABORACION DE DOCUMENTACION DE LA NUEVA APLICACION TECNOLOGICA
-B4.5 CAPACITACION A LOS USUARIOS DE LA NUEVA APLICACION TECNOLOGICA
-B4.6 IMPLEMENTACION DE LOS MECANISMOS DE AUDITORIA INFORMATICA DE LA NUEVA APLICACION TECNOLOGICA
-B4.7 PONER EN FUNCIONAMEINTO LA NUEVA APLICACION TECNOLOGICA
+B4.2 MIGRACION DE LA INFORMACION A LA NUEVA APLICACION TECNOLOGICA						Pag 477 - 
+B4.3 REALIZAR PRUEBAS DE CAMPO DE LA NUEVA APLICACION TECNOLOGICA						Pag 477 - 480
+B4.4 ELABORACION DE DOCUMENTACION DE LA NUEVA APLICACION TECNOLOGICA						Pag 481 - 483 
+B4.5 CAPACITACION A LOS USUARIOS DE LA NUEVA APLICACION TECNOLOGICA						Pag 484 - 498 
+B4.6 IMPLEMENTACION DE LOS MECANISMOS DE AUDITORIA INFORMATICA DE LA NUEVA APLICACION TECNOLOGICA		Pag 499  	
+B4.7 PONER EN FUNCIONAMEINTO LA NUEVA APLICACION TECNOLOGICA							Pag 500
 
 
 C - DESARROLLO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA APLICACIONES ESPECIFICAS
 C1 - ANALISIS DE LA PROBLEMATICA CON BASE EN UNA TECNOLOGIA
-C1.1 - IDENTIFICACION DE LA PROBLEMATICA TECNOLOGICA DE UNA APLICACION ESPECIFICA
-C1.2 - IDENTIFICACION DE LOS REQUERIMIENTOS HARDWARE Y SOFTWARE PARA LA APLICACION ESPEFICICA
+C1.1 - IDENTIFICACION DE LA PROBLEMATICA TECNOLOGICA DE UNA APLICACION ESPECIFICA				Pag 19-23
+C1.2 - IDENTIFICACION DE LOS REQUERIMIENTOS HARDWARE Y SOFTWARE PARA LA APLICACION ESPEFICICA			Pag 24-48
 Ingenieria en requerimientos (areas)
 	Concepcion
 		Entendimiento basico del problema, las personas que quieren una solucion, la naturaleza de la solucion que se desea.
@@ -930,13 +938,14 @@ Diagrama de actividades UML
 	Representacion grafica del flujo de interaccion dentro de un escenario especifico. Similar al de flujo
 Diagrama de canal (swimlane) UML
 	Variacion ultil del diagrama de actividad uml, permite representar el flujo de actividades, descritas po el caso de uso; al mismo tiempo, indica que actor o clase de analisis es responsable de la accion descrita por un rectangulo de actividad. Las responsabilidades se representan con segmentos paralelos, que divide el diagrama en forma vertical, como carriles de alberca.
-C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA
-C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA
-C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA
+
+C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA														Pag 49
+C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA	Pag 49
+C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA					Pag 49 - 107
 
 
 C2. DESARROLLO DEL MODELO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
-C2.1 - ELECCION DEL DISEÑO DEL HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
+C2.1 - ELECCION DEL DISEÑO DEL HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA				Pag 108 - 215
 
 Generos Arquitectonicos
 	Inteligencia Artificial
@@ -1032,7 +1041,7 @@ Tecnicas de preparacion de materiales para microsensores
 	-Micromecanizado
 		Conjunto de procesos para producir componentes micromecanicos tridimensionales.
 
-C2.2 - MODELAR EL PROTOTIPO DE HARDWARE CON LAS CARACTERISTICAS REQUERIDAS
+C2.2 - MODELAR EL PROTOTIPO DE HARDWARE CON LAS CARACTERISTICAS REQUERIDAS						Pag 216 - 269
 Microcontrolador
 	Circuito integrado programable que contiene todos los componentes de un computador. Se emplea para controlar el funcionamiento de una tarea determinada y, debido a su reducido tamaño, suele ir incorporado en el propio dispositivo al que gobierna.
 	Es un sistema cerrado que contiene un computador completo y de prestaciones limitadas que no se pueden modificar.
@@ -1048,18 +1057,17 @@ Ley
 	Una formula para una relacion de la naturaleza
 Derivacion
 	una formula producida matematicamente
-C.2.3 - DESARROLLO DE SOFTWARE QUE HAGA FUNCIONAL AL HARDWARE DEL SISTEMA
+C.2.3 - DESARROLLO DE SOFTWARE QUE HAGA FUNCIONAL AL HARDWARE DEL SISTEMA						Pag 270 - 
 
 
 C3 - EVALUACION DEL MODELO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
-C 3.1 - ESTABLECIMIENTO DE LOS CRITERIOS EFICIENCIA Y EFICACIA PARA EVALUAR EL SISTEMA DESARROLLADO 
-C 3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO DEL SISTEMA 
-C 3.3 - MODELAR EL AMBIETE DE TRABAJO PARA LA SIMULACION DEL PROTOTITPO DEL SISTEMA
-C 3.4 - EVALUACION DEL PROTOTIPO DEL SISTEMA CON BASE EN LOS CRITERIOS DE EFICACIA Y EFICIENCIA PREESTABLECIDOS
+C 3.1 - ESTABLECIMIENTO DE LOS CRITERIOS EFICIENCIA Y EFICACIA PARA EVALUAR EL SISTEMA DESARROLLADO 			Pag 271
+C 3.2 - DISEÑO DEL AMBIENTE DE TRABAJO PARA LA SIMULACION DEL PROTOTIPO DEL SISTEMA 					Pag 272
+C 3.3 - MODELAR EL AMBIETE DE TRABAJO PARA LA SIMULACION DEL PROTOTITPO DEL SISTEMA					Pag 272
+C 3.4 - EVALUACION DEL PROTOTIPO DEL SISTEMA CON BASE EN LOS CRITERIOS DE EFICACIA Y EFICIENCIA PREESTABLECIDOS		Pag 276
 
 
 D4 - ADAPTACION DE HARDWARE Y/O SOFTWARE PARA APLICACIONES ESPECIFICAS
-
 D 4.1 - ANALISIS DE LA FUNCIONALIDAD DEL SISTEMA
 D 4.1.1 - IDENTIFICACION DE LAS FUNCIONES ACTUALES DEL SISTEMA QUE CUMPLEN CON EL RENDIMIENTO ADECUADO
 D 4.1.2 - IDENTIFICACION DE LOS PUNTOS CRITICOS DEL SISTEMA Y REQUERIMIENTOS DE MEJORA 
