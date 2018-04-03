@@ -942,8 +942,45 @@ Diagrama de canal (swimlane) UML
 C1.3 - DETERMINACION DE LA FACTIBILIDAD PARA CUBRIR LOS REQUERIMIENTOS INVOLUCRADOS DE HARDWARE Y SOFTWARE DEFINIDOS PARA LA APLICACION ESPECIFICA														Pag 49
 C1.4 - ESTABLECIMIENTO DE LAS METODOLOGIAS TRABAJO PARA REALIZAR LOS CAMBIOS DEFINIDOS PARA LA APLICACION ESPECIFICA	Pag 49
 C1.5 DOCUMENTACION DEL ANALISIS PARA RESOLVER LOS PROBLEMAS DE LA APLICACION ESPECIFICA					Pag 49 - 107
+Diferentes puntos de vista que se usan para describir el modelo de requerimientos.
+Modelos basados en el escenario
+	-Punto de vista de distintos actores del sistema
+		Caso de uso 
+		Diagrama de actividades
+		Diagrama tipo carril de natacion
+		historias de usuario
+Modelos de clase
+	-Representan clase orientada a objetos y la manera en la que las clases colaboran para cumplir con los requerimientos
+		Diagrama de clase
+		Diagrama de colaboracion
+Modelos de comportamiento
+	-El modo en que se comparte el software como consecuencia de eventos externos
+		Diagramas de estado
+		Diagramas de secuencia
+Modelos de flujo
+	-representa los elementos funcionales del sistema y la manera como transforman los datos a medida que se avanza
+		DFD
+		Modelo de datos
+Modelo de datos
+	-Ilustra el dominio de informacion del problema
+	Objecto de datos
+	Atributos de datos
+	Relaciones de datos
 
+El modelo de comportamiento indica la forma en la que respondera el software a eventos o estimulos externos.
 
+Modelado para WebApp
+	Modelo de contenido
+		Espectro completo de contenido que dara la webapp
+	Modelo de interaccion
+		Manera en la que los usuarios interacturan con la webapp
+	Modelo funcional
+		Define las operaciones que se aplicaran al contenido de la webapp
+	Modelo de navegacion
+		define la estrategia general de navegacion para la webapp
+	Modelo de configuracion
+		describe el ambiente e infraesctructura en la que reside la webapp
+		
 C2. DESARROLLO DEL MODELO DE HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA
 C2.1 - ELECCION DEL DISEÑO DEL HARDWARE Y SU SOFTWARE ASOCIADO PARA LA APLICACION ESPECIFICA				Pag 108 - 215
 
