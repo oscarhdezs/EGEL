@@ -1,0 +1,191 @@
+Spring
+
+Spring Container
+-Primary Functions
+	-Create and manage objects (Inversion of Control)
+	-Inject object's dependency (Dependency Injection)
+	
+Configuration Spring Container
+	-Xml configuration file
+	-Java Annotations
+	-Java Source Code
+	
+XML Configuration file
+	-configure xml file
+		<?xml version="1.0" encoding="UTF-8"?>
+		<beans ....
+			<!-- Define your beans here -->
+	
+			<bean id="myCoach" class="com.oscar.springdemo.BaseballCoach"/> 	--->   BaseballCoach myCoach = new BaseballCoach()
+
+		</beans>
+		
+	-create container
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Coach track = context.getBean("myCoach",Coach.class);
+		System.out.println(track.getDailyWorkout());
+		context.close();
+		
+Dependency Injection
+	-Constructor Injection
+	-Setter Injection
+	-Auto-wiring
+	
+-Constructor Injection
+	-Define a private filed for the dependency
+	-Define a constructor for dependency injection
+		public class BaseballCoach implements Coach{
+
+			private FortuneService fortuneService;
+	
+			public BaseballCoach(FortuneService fortuneService) {
+				this.fortuneService = fortuneService;
+			}
+	
+			public String getDailyWorkout() {
+				return "spend 30 minutes on batting practice";
+			}
+			
+			public String getDailyFortune() {
+				return fortuneService.getFortune();
+			}
+		}
+		
+	-Configure the spring bean
+		-Define the dependency bean
+		-set up the constructor injection
+		<beans .....
+			<!-- Define your beans here -->
+			<bean id="myFortuneService" class="com.oscar.springdemo.HappyFortune"/>	--->	Define the dependency
+																					---> HappyFortune myFortuneService = new HappyFortune();
+			<bean id="myCoach" class="com.oscar.springdemo.BaseballCoach">
+				<constructor-arg ref="myFortuneService"/>					---> Inject the dependency using "Constructor Injection" have to use the id
+			</bean> 														---> BaseballCoach myCoach = new BaseballCoach(myFortuneService);
+		</beans>
+		
+-Setter Injection
+	Inject dependencies by calling setter method(s) on your class
+		1- Create setter method(s) in your class for injections
+			public class VolleyBallCoach implements Coach{
+				private FortuneService fortuneService;				--->	Object to inject
+
+				@Override
+				public String getDailyWorkout() {
+					return "do 10 min. of set";
+				}
+
+				@Override
+				public String getDailyFortune() {
+					// TODO Auto-generated method stub
+					return "your fortune for volley is:"+fortuneService.getFortune();
+				}
+				
+				public void setFortuneService(FortuneService fortuneService) {		--->	Called by Spring during setter injection
+					this.fortuneService = fortuneService;
+				}
+			}
+		2- Configure the dependency injection in Spring conf file
+			<beans ...
+				<!-- Define your beans here -->
+				<bean id="myFortuneService" class="com.oscar.springdemo.HappyFortune"/>		---> 	Define the dependency
+																							--->	HappyFortune myFortuneService = new HappyFortune();
+				<bean id="volleyCoach" class="com.oscar.springdemo.VolleyBallCoach">		--->	VolleyBallCoach volleyCoach = new VolleyBallCoach();
+					<property name="fortuneService" ref="myFortuneService"/>				--->	The id bean defined goes in ref
+				</bean>																		---> 	The property name must be the same as in the setter
+			</beans>																		--->	volleyCoach.setFortuneService(myFortuneService);
+			
+-Injecting values from Properties File
+	1- Create the properties File
+		File:data.properties
+			email=oscar.hdez.s@gmail.com				--->	Name and value for the property
+			team=Club FC America
+	2- Load Properties File in Spring config file & Reference values from Properties File
+		<beans ...
+			<context:property-placeholder location="classpath:data.properties"/>	--->	Load the property file in memory
+
+			<!-- Define your beans here -->
+			<bean id="myFortuneService" class="com.oscar.springdemo.HappyFortune"/>
+			
+			<bean id="volleyCoach" class="com.oscar.springdemo.VolleyBallCoach">
+				<property name="fortuneService" ref="myFortuneService"/>
+				<property name="emailAddress" value="${email}"/>					--->	Reference the values from Properties File
+				<property name="team" value="${team}"/>								--->	use the name of the property inner ${}
+			</bean>
+		</beans>
+
+	
+-BeanScope
+	Singleton is the default scope
+		Create only one instance of the bean.
+		It is cached in memory
+		All requests for the bean will return a SHARED reference to the SAME bean.
+	Prototype
+		Creates a new bean instance for each container request.
+	Request
+		Scoped to an HTTP web request. Only used for web apps.
+	Session
+		Scoped to an HTTP web session. Only used for web apps.
+	global-session
+		Scoped to a global HTTP web session. Only used for web apps.
+		
+	-Define the scope in the xml configuration file
+		<bean id="volleyCoach" class="com.oscar.springdemo.VolleyBallCoach" 
+			scope="singleton" || scope="prototype" || scope="request" || scope="session">
+		</bean>
+		
+-Bean Lifecycle
+	Container Started	--->	Bean Instantiated	--->	Dependency Injected	--->	Internal Spring Processing	--->	Your Custom Init Method
+	-You can add custom code during bean initialization
+	-You can add custom code during bean destruction
+	
+	-Using configuration file
+		When using XML configuration
+			Access modifier
+				The method can have any access modifier (public, protected, private)
+
+			Return type	
+				The method can have any return type. However, "void' is most commonly used. 
+
+			Method name
+				The method can have any method name.
+
+			Arguments
+				The method can not accept any arguments. The method should be no-arg.
+	
+			For "prototype" scoped beans, Spring does not call the destroy method. 
+	
+		-Configure methods names in Spring config file
+			<bean id="volleyCoach" class="com.oscar.springdemo.VolleyBallCoach"
+				init-method="doStartup" destroy-method="doCleanup">
+			</bean>
+		-Define your methods for init add destroy
+			public void doStartup() {					--->	Method name must match with the name defined in the xml file
+				System.out.println("In startup...");
+			}
+	
+			public void doCleanup() {					--->	Method name must match with the name defined in the xml file
+				System.out.println("In cleanup...");
+			}
+
+			
+-Java Annotations
+	-For using annotation in Spring you have to follow the next steps
+		1. Enable component scanning in Spring config file
+			<beans ...																			Spring will scan this package recursively
+				<context:component-scan base-package="com.oscar.springdemo.withScan"/>	--->	identify the components that have the annotations
+			</beans>																			on it and automatically register them on spring container
+		2. Add the @Component Annotation to your Java classes	
+			@Component("tennisCoach")										--->	Annotation that say to spring this class is a special spring bean
+			public class TennisCoach implements Coach{						--->	You give the spring bean id if you dont provide the bean id names
+				@Override													--->	it takes the name of the class in lower case
+				public String getDailyWorkout() {
+					return "do 5 ace set";
+				}
+			}
+		3. Retrieve bean from Spring container
+			ClassPathXmlApplicationContext context = 
+			new ClassPathXmlApplicationContext("applicationContextWithScan.xml");
+			Coach tCoach = context.getBean("tennisCoach",Coach.class); 		--->	Then bean id name that you set in your class
+		
+	Spring will scan your java classes for special annotations
+	Automatically register the beans in the Spring container for that classes that contain special annotations
