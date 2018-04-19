@@ -169,6 +169,7 @@ Dependency Injection
 
 			
 -Java Annotations
+	-Inversion Of Control
 	-For using annotation in Spring you have to follow the next steps
 		1. Enable component scanning in Spring config file
 			<beans ...																			Spring will scan this package recursively
@@ -176,8 +177,8 @@ Dependency Injection
 			</beans>																			on it and automatically register them on spring container
 		2. Add the @Component Annotation to your Java classes	
 			@Component("tennisCoach")										--->	Annotation that say to spring this class is a special spring bean
-			public class TennisCoach implements Coach{						--->	You give the spring bean id if you dont provide the bean id names
-				@Override													--->	it takes the name of the class in lower case
+			public class TennisCoach implements Coach{						--->	You give the spring bean id, if you dont provide the bean id name
+				@Override													--->	it takes the name of the class with the first letter in lower-case
 				public String getDailyWorkout() {
 					return "do 5 ace set";
 				}
@@ -189,3 +190,91 @@ Dependency Injection
 		
 	Spring will scan your java classes for special annotations
 	Automatically register the beans in the Spring container for that classes that contain special annotations
+	
+	-Spring Dependency Injection with Annotations and Autowiring
+		Autowiring
+			Spring will look for a class that matches the property, matches by type: class or interface
+			Spring will inject automatically ... hence it is autowired.
+			Spring will scan @Components, is any one implements FortuneService interface? if so, let's inject them. e. g. HappyFortuneService
+			
+			-Constructor Injection
+				1. Define the dependency interface and class
+					public interface FortuneService {				--->		Defining the interfaz
+						String getFortune();
+					}
+					
+					@Component														--->	Spring autoscan and find this implementation and define spring bean
+					public class HappyFortuneService implements FortuneService{		--->	Implementing the interface
+						@Override
+						public String getFortune() {
+							return "Today is a very nice day";
+						}
+					}
+				2. Create a constructor in your class for injections & Configure the dependency injection with @Autowired Annotation
+					@Component
+					public class SoccerCoach implements Coach{
+						private FortuneService fortuneService;
+						
+						@Autowired												--->	do the autowiring, Spring will find a bean that implements
+						public SoccerCoach(FortuneService fortuneService) {		--->	FortuneService, it scan all the components and find the component
+							this.fortuneService = fortuneService;				--->	that implement FortuneService interface, take that bean and inject it
+						}
+						@Override
+						public String getDailyFortune() {
+							return fortuneService.getFortune();
+						}
+					}
+			-Setter Injection
+				1. Define the dependency interface and class
+					public interface FortuneService {				--->		Defining the interfaz
+						String getFortune();
+					}
+					
+					@Component														--->	Spring autoscan and find this implementation and define spring bean
+					public class HappyFortuneService implements FortuneService{		--->	Implementing the interface
+						@Override
+						public String getFortune() {
+							return "Today is a very nice day";
+						}
+					}
+				2. Create a setter in your class for injections & Configure the dependency injection with @Autowired Annotation
+					@Component
+					public class GymCoach implements Coach{
+						private FortuneService fortuneService;
+						
+						@Autowired												--->	do the autowiring, Spring will find a bean that implements
+						public void setFortuneService(FortuneService fortuneService) {	--->	FortuneService, it scan all the components and find the component
+							this.fortuneService = fortuneService;				--->	that implement FortuneService interface, take that bean and inject it
+						}
+						@Override
+						public String getDailyFortune() {
+							return fortuneService.getFortune();
+						}
+					}
+					*Note you can use any method name, just have to have in the paramenter the Interface to inject.
+			-Field Injections
+				Configure the dependency injection with Autowired Annotation, applied directly to the field, no need for setter methods
+				1. Define the dependency interface and class
+					public interface FortuneService {				--->		Defining the interfaz
+						String getFortune();
+					}
+					
+					@Component														--->	Spring autoscan and find this implementation and define spring bean
+					public class HappyFortuneService implements FortuneService{		--->	Implementing the interface
+						@Override
+						public String getFortune() {
+							return "Today is a very nice day";
+						}
+					}
+				2. Create a setter in your class for injections & Configure the dependency injection with @Autowired Annotation
+					@Component
+					public class GymCoach implements Coach{
+						@Autowired									--->	do the autowiring, Spring will find a bean that implements
+						private FortuneService fortuneService;			--->	FortuneService, it scan all the components and find the component
+																	--->	that implement FortuneService interface, take that bean and inject it
+						@Override
+						public String getDailyFortune() {
+							return fortuneService.getFortune();
+						}
+					}
+				
