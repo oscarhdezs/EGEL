@@ -192,12 +192,12 @@ Dependency Injection
 	Automatically register the beans in the Spring container for that classes that contain special annotations
 	
 	-Spring Dependency Injection with Annotations and Autowiring
-		Autowiring
+		Autowiring & Qualifiers
 			Spring will look for a class that matches the property, matches by type: class or interface
 			Spring will inject automatically ... hence it is autowired.
 			Spring will scan @Components, is any one implements FortuneService interface? if so, let's inject them. e. g. HappyFortuneService
 			
-			-Constructor Injection
+			-Constructor Injection 
 				1. Define the dependency interface and class
 					public interface FortuneService {				--->		Defining the interfaz
 						String getFortune();
@@ -219,6 +219,12 @@ Dependency Injection
 						public SoccerCoach(FortuneService fortuneService) {		--->	FortuneService, it scan all the components and find the component
 							this.fortuneService = fortuneService;				--->	that implement FortuneService interface, take that bean and inject it
 						}
+						
+						@Autowired												--->	do the autowiring, Spring will find a bean that implements
+						public SoccerCoach(@Qualifier("randomFortuneService")FortuneService fortuneService) {		--->	FortuneService, it scan all the components and find the component
+							this.fortuneService = fortuneService;				--->	that implement FortuneService interface, take that bean and inject it
+						}
+						
 						@Override
 						public String getDailyFortune() {
 							return fortuneService.getFortune();
@@ -243,6 +249,7 @@ Dependency Injection
 						private FortuneService fortuneService;
 						
 						@Autowired												--->	do the autowiring, Spring will find a bean that implements
+						@Qualifier("randomFortuneService")						--->	When we have more implementations of FortuneService
 						public void setFortuneService(FortuneService fortuneService) {	--->	FortuneService, it scan all the components and find the component
 							this.fortuneService = fortuneService;				--->	that implement FortuneService interface, take that bean and inject it
 						}
@@ -270,6 +277,7 @@ Dependency Injection
 					@Component
 					public class GymCoach implements Coach{
 						@Autowired									--->	do the autowiring, Spring will find a bean that implements
+						@Qualifier("randomFortuneService")			--->	When we have more implementations of FortuneService
 						private FortuneService fortuneService;			--->	FortuneService, it scan all the components and find the component
 																	--->	that implement FortuneService interface, take that bean and inject it
 						@Override
