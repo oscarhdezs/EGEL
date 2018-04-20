@@ -285,4 +285,31 @@ Dependency Injection
 							return fortuneService.getFortune();
 						}
 					}
+	-Bean Scope		
+		@Component
+		@Scope("prototype")									--->	you define the scope here (singleton/prototype/session/request/global-session)
+		public class GymCoach implements Coach{
+			@Autowired									
+			private FortuneService fortuneService;		
+				@Override
+				public String getDailyFortune() {
+					return fortuneService.getFortune();
+				}
+		}
+		
+	-Bean Lifecycle
+		1- Define your methods for init and destroy & add annotations:@PostConstruct and @PreDestroy
+			@Component
+			public class GymCoach implements Coach{
 				
+				@PostConstruct									--->	Init method
+				private void doInit() {
+					System.out.println("Initializing things");
+				}
+				
+				@PreDestroy										--->	Destroy method
+				private void doDestroy() {
+					System.out.println("Cleaning up...");
+				}
+			}
+		
