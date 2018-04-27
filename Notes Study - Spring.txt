@@ -313,3 +313,396 @@ Dependency Injection
 				}
 			}
 		
+		
+Java Source Code
+	-With ComponentScan annotation
+		-Create a java class and annotate as @Configuration
+			@Configuration										--->	Define that is a configuration file for spring
+			@ComponentScan("com.oscar.springdemo.beans")		--->	Specify the package where find the components bean
+			public class SportConfigWithComponentScan {
+	
+			}
+			
+		-Declare the beans
+			@Component
+			public class LuckyFortuneService implements FortuneService{
+				@Override
+				public String getFortune() {
+					return "Today is a great day!!!";
+				}
+			}
+
+			@Component
+			public class CrossfitCoach implements Coach{
+				@Autowired
+				FortuneService fortuneService;
+				@Override
+				public String getDailyWorkout() {
+					return "Do an EMON";
+				}
+				@Override
+				public String getFortune() {
+					return fortuneService.getFortune();
+				}
+			}
+
+			
+		-Read Spring Java configuration class & Retrieve bean
+			public class JavaConfigDemoApp {
+				public static void main(String[] args) {
+					AnnotationConfigApplicationContext context = 			--->		Read the spring java config file.
+					new AnnotationConfigApplicationContext(SportConfigWithComponentScan.class);
+		
+					Coach crossCoach = context.getBean("swimCoach",Coach.class);
+		
+					context.close();
+				}
+			}
+
+	-Without ComponentScan annotation
+		-Create a java class and annotate as @Configuration
+			@Configuration
+			public class SportConfigWithoutComponentScan {
+
+				@Bean 										--->		Register the bean
+				FortuneService niceFortuneService() {		--->		The method name is the bean Id
+					return new NiceFortuneService();
+				}
+
+				@Bean										--->		Register the bean
+				public Coach swimCoach() {					--->		The method name is the bean id
+					return new SwimCoach(niceFortuneService());		--->	Inject the dependency in the constructor
+				}
+			}
+			
+		-Declare the beans
+			*No any special annotation is needed (Component, Autowired)
+			public class NiceFortuneService implements FortuneService{
+				@Override
+				public String getFortune() {
+					return "You will have a nice Fortune today";
+				}
+			}
+			
+			public class SwimCoach implements Coach{
+				FortuneService fortuneService;
+				public SwimCoach(FortuneService fortuneService) {
+					super();
+					this.fortuneService = fortuneService;
+				}
+				@Override
+				public String getDailyWorkout() {
+					return "do 200 mts as fast as possible";
+				}
+				@Override
+				public String getFortune() {
+					return fortuneService.getFortune();
+				}
+			}
+			
+	-Read Spring Java configuration class & Retrieve bean from Spring container
+		public class JavaConfigDemoApp {
+			public static void main(String[] args) {
+				AnnotationConfigApplicationContext context = 		--->		Read the spring java config file.
+				new AnnotationConfigApplicationContext(SportConfigWithoutComponentScan.class);
+				
+				Coach crossCoach = context.getBean("swimCoach",Coach.class);
+				
+				System.out.println(crossCoach.getDailyWorkout());
+				System.out.println(crossCoach.getFortune());
+				
+				context.close();
+			}
+		}
+		
+	-Inject values from Properties File
+		@Configuration
+		@PropertySource("classpath:data.properties")		--->	Load the property file
+		public class SportConfigWithoutComponentScan {
+			@Bean FortuneService niceFortuneService() {
+				return new NiceFortuneService();
+			}
+			@Bean
+			public Coach swimCoach() {
+				return new SwimCoach(niceFortuneService());
+			}
+		}
+		
+		public class SwimCoach implements Coach{
+
+			@Value("${email}")							--->	Inject the value from Property File
+			private String email;
+			@Value("${team}")							--->	Inject the value from Property File
+			private String team;
+		}
+		
+		
+Spring MVC
+	-Configure front controller in web.xml
+	<web ...>
+		<servlet>
+			<servlet-name>dispatcher</servlet-name>
+			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+			<init-param>
+				<param-name>contextConfigLocation</param-name>
+				<param-value>/WEB-INF/spring-servlet.xml</param-value>
+			</init-param>	
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>dispatcher</servlet-name>
+			<url-pattern>/</url-pattern>
+		</servlet-mapping>
+	</web>
+	
+	-add support for Spring component Scanning & support for conversion, formatting and validation 
+	Define Spring MVC view resolver
+	spring-servlet.xml
+	
+	<beans...>
+		<context:component-scan base-package="com.oscar.springdemo.beans"/>
+		<mvc:annotation-driven/>
+		<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>         ${pageContext.request.contextPath}
+		<util:properties id="countryOptions" location="classpath:../countries.properties" />    @Value("#{countryOptions}") 
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB/view/"/>
+			<property name="suffix" value=".jsp"/>
+		</bean>
+	</beans>
+	
+	-Create the controller and the mapping
+		@Controller									--->	This annotation make the class as controller
+		public class HomeController {
+			@RequestMapping("/home")				--->	Mapping the request
+			public String showMyPage() {
+				return "main-menu";					--->	The page where is return  
+				
+			}
+		}
+		
+	-Read html form data
+		@Controller
+		public class HelloWorldController {
+			@RequestMapping("/showForm")
+			public String showForm(){
+				return "helloWorld-form";						--->	Dispatch to helloWorld-form.jsp
+			}
+			
+			@RequestMapping("/processForm")
+			public String processForm() {
+				return "helloworld";							--->	Dispatch to helloworld.jsp
+			}
+		}
+		
+		helloWorld-form.jsp
+			<form action="processForm" method="GET">			--->	submit to processForm mapping.
+				Name:<input type="text" name="studentName"/>	--->	save the value in studentName
+				<input type="submit" />
+			</form>
+			
+		helloworld.jsp
+			<body>
+				Hello World of Spring!
+				<br><br>
+				Student Name:${param.studentName}				--->	value enter in the input the param name is the same
+			</body>												--->	as the same as input name in the form
+		
+	-Adding/Reading Data to the spring Model
+		Model is a container for your application data, you can put anything in the model (String, object, info, etc)
+		the view pages have access to the model.
+		
+		@Controller
+		public class HelloWorldController {
+
+			@RequestMapping("/showForm")
+			public String showForm(){
+				return "helloWorld-form";						--->	Dispatch to helloWorld-form.jsp
+			}
+			
+			@RequestMapping("/processFormV2")
+			public String letsShoutDude(HttpServletRequest request, Model model) {	--->
+				String name = request.getParameter("studentName");	--->	get the parameter name
+				String upper = name.toUpperCase();
+				model.addAttribute("message",upper);			--->	Use the model for store the object  
+				return "helloworldV2";							--->	Dispatch to helloworldV2.jsp
+			}
+		}
+		
+		helloWorld-form.jsp
+			<form action="processFormV2" method="GET">			--->	submit to processFormV2 mapping.
+				Name:<input type="text" name="studentName"/>	--->	save the value in studentName as parameter
+				<input type="submit" />
+			</form>
+			
+		helloworldV2.jsp
+			<body>
+				Hello World of Spring!
+				<br><br>
+				Message:${message}					--->	name of the attribute that was stored in the model
+			</body>											
+		
+	Reading HTML Form Data With @RequestParam Annotation
+		@RequestMapping("processFormV3")
+		public String processFormV3(
+			@RequestParam("studentName") String Tname,	--->	read param from request: studentName, bind the variable to Tname
+			Model model) {
+				String upper = Tname.toUpperCase();
+				model.addAttribute("message",upper);
+				return "helloworld";
+		}
+		
+	-Spring MVC For Tags
+		It can make use of data binding, Automatically setting / retrieving data from a java object / bean
+		When form is loaded, Spring MVC will call: all get methods in the bean
+		When form is submitted, Spring MVC will call: all set methods in the bean
+		
+		-Create the model	
+			public class Student {
+				private String firstName;
+				private String lastName;
+				private String country;
+				private String language;
+				private String[] os;
+				
+				public String getFirstName() {
+					return firstName;
+				}
+				public void setFirstName(String firstName) {
+					this.firstName = firstName;
+				}
+				// set and get for lastName
+				// set and get for country
+				// set and get for language
+				// set and get for Operating Systems
+			}
+		-Create the controller
+			@Controller	
+			@RequestMapping("/student")
+			public class StudentController{
+				@RequestMapping("/showForm")
+				public String showForm(Model model){
+					Student theStudent = new Student();
+					model.addAttribute("student",theStudent);		--->	Store in the model theStudent object with
+					return "student-form";							--->	student name
+				}
+			
+				@RequestMapping("/processFormV4")
+				public String processFormV4(
+					@ModelAttribute("student")Student theStudent) {	--->	retrieve the student object with the data populates
+						return "helloworld";
+				}
+			}
+		-Create the form
+			student-form.jsp
+					<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+					<form:form form action="processFormV4" modelAttribute="student">	--->	name of the attribute sent before in model
+						<form:input path="firstName" />							--->	Property of the Student class
+						<form:input path="lastName"/>							--->	Property of the Student class
+						<form:select path="country">							--->	Property of the Student class
+							<form:option value="Brazil" label="Brazil"/>		--->	Value to take and what display
+							<form:option value="France" label="France"/>
+						</form:select>	
+						<form:radiobutton path="language" value="Java"/>
+						<form:radiobutton path="language" value="C#"/>
+						<form:checkbox path="os" value="Linux"/>
+						<form:checkbox path="os" value="Mac OS"/>
+						<input type="submit" value="Submit"/>
+					</form:form>
+					
+			-Fill dinamically a select
+				-In the bean
+					private LinkedHashMap<String,String> countryOptions;
+					countryOptions = new LinkedHashMap<String,String>();
+					countryOptions.put("BR","Brazil");
+					countryOptions.put("FR","France");
+					countryOptions.put("GE","Germany");
+				//Create get 
+				-In the form	
+					<form:select path="country">							--->	Property of the Student class
+							<form:options items="{student.countryOptions}/>		---> fill the option with the data collection
+						</form:select>	
+						
+	-From Validation
+		Check the user input form for 
+			required fields
+			valid numbers in a range
+			valid formatting
+			custom business rule
+		
+		-validation rule to the model
+			public class Student {
+				@NotNull(message="is required")
+				@Size(min=1, message="minimun 1 char")
+				private String lastName;
+
+				@Min(value=0,message="must be greater than or equal to zero")
+				@Max(value=10,message="must be less than or equals to ten")
+				private int freePasses;
+				
+				@Pattern(regexp="^[a-zA-Z0-9]{5}",message="only 5 chars/digits")
+				private String zipCode;
+				
+				//All set and get
+			}
+		-Add the from:error tag in the jsp
+			<form:input path="lastName" />
+			<form:errors path="lastName" cssClass="error" />
+			
+		-Add validation rule to controller
+			@RequestMapping("/processFormV4")
+			public String processFormV5(
+			@Valid @ModelAttribute("student")Student theStudent,	--->	@Valid perform validation rules on Student object
+			BindingResult bindingResult) {							--->	Result of validation placed in the BindingResult
+				if(bindingResult.hasErrors()){
+					return "student-form";
+				}else{
+					return "helloworld";
+				}
+			}
+			
+			@InitBinder												--->	Preprocesor request
+			public void initBinder(WebDataBinder dataBinder){
+				StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+				dataBinder.registerCustomEditor(String.class,stringTrimmerEditor);
+			}
+			
+	-Create a Custom Validation
+		-Create Custom validation rule
+			Create @CourseCode annotation
+				@Constraint(validatedBy = CourseCodeConstraintValidator.class)	--->	Helper class that contains business rule / validation logic
+				@Target({ElementType.METHOD,ElementType.FIELD})					--->	Where can be applied the annotation
+				@Retention(RetentionPolicy.RUNTIME)								--->	how long do I have to retain it.
+				public @interface CourseCode {									--->	Name of the annotation CourseCode 
+
+					public String value() default "LUV";						--->	Define value parameter and a default value
+					public String message() default "must start with LUV";		--->	Define message parameter and a default value
+					
+				}
+		-Add validation rule to Customer class
+			public class CourseCodeConstraintValidator implements 				
+				ConstraintValidator<CourseCode,String>{							--->	Implement ConstraintValidator and add the Annotation Name
+				
+				private String coursePrefix;
+	
+				@Override
+				public void initialize(CourseCode courseCode) {
+					coursePrefix = courseCode.value();
+				}
+	
+				@Override
+				public boolean isValid(String code, 
+					ConstraintValidatorContext constraintValidatorContext) {	--->	
+					boolean result;
+					if(code != null) {
+						result = code.startsWith(coursePrefix);
+					}else {
+						result = true;
+					}
+					return result;
+				}
+				
+			
+			}
+		
+
+Spring Hibernate
+	
