@@ -705,4 +705,459 @@ Spring MVC
 		
 
 Spring Hibernate
+	Configurate xml file
+		<hibernate-configuration>
+			<session-factory>
+				<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+				<property name="connection.url">jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false</property>
+				<property name="connection.username">hbstudent</property>
+				<property name="connection.password">hbstudent</property>
+				
+				<property name="connection.pool_size">1</property>
+				
+				<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+				
+				<property name="show_sql">true</property>
+				
+				<property name="current_session_context_class"></property>
+			</session-factory>
+		</hibernate-configuration>
 	
+	Annotate Java Class
+		@Entity
+		@Table(name="student")
+		public class Student{
+			@Id
+			@GeneratedValue(strategy=GenerationType.IDENTITY)		--->	let to database handle the generation AUTO_INCREMENT
+			@Column(name="id")
+			int id;
+			@Column(name="first_name")
+			String firstName;
+			@Column(name="last_name")
+			String lastName;
+			@Column(name="email")
+			String email;
+			
+			//Create setter and getter and constructor
+		}
+		
+	Develop Java Code to perform database operations
+		SessionFactory
+			Reads the hibernate config file
+			Creates Session objects
+			Heavy-weight object
+			Only create once in your application
+		
+		Session	
+			Wraps a JDBC connection
+			Main object used to save/retrieve objects
+			Short-lived object
+			Retrieved from SessionFactory
+			
+		Configure session-factory
+			SessionFactory factory = new Configuration()				--->	Create new configuration for session-factory
+									.configure("hibernate.cfg.xml")		--->	Add the configuration file
+									.addAnnotatedClass(Student.class)	--->	Add the entity class
+									.buildSessionFactory();				--->	build the session factory
+									
+			Session session = factory.getCurrentSession();				--->	Create the session
+			
+			try{
+				session.beginTransaction();								--->	Start a transaction
+				session.save(obj);										--->	Save the object
+				session.getTransaction().commit();						--->	Commit the transaction
+			}finally{
+				factory.close();
+			}
+	Create objects
+			try{
+				session.beginTransaction();								--->	Start a transaction
+				session.save(obj);										--->	Save the object
+				session.getTransaction().commit();						--->	Commit the transaction
+			}finally{
+				factory.close();
+			}
+	
+	Read objects
+		try{
+				session.beginTransaction();											--->	Start a transaction
+				Student student = session.get(Student.class,theStudent.getId());	--->	Recover the row by id number
+				session.getTransaction().commit();						--->	Commit the transaction
+			}finally{
+				factory.close();
+			}
+	
+	Query Object
+		try{
+			session.beginTransaction();
+			
+			List<Student> listStu = 
+			session.createQuery("from Student").getResultList();	--->	Use the object name not the bdd name
+			listStu = 
+			session.createQuery("from Student s where s.lastName='Hernandez'").getResultList();	---> use the property java not db
+			session.createQuery("from Student s where s.lastName='Hernandez' OR s.firstName='Daffy'").getResultList();	
+			session.createQuery("from Student s where s.email LIKE '%oscar%'").getResultList();	
+			session.getTransaction.commit();
+		}finally{
+			factory.close();
+		}
+	
+	Update Object
+		Session session = factory.getCurrentSession();								--->	Create the session
+		try{
+				session.beginTransaction();											--->	Start a transaction
+				Student student = session.get(Student.class,theStudent.getId());	--->	Recover the row by id number
+				student.setEmail("newEmail@gmail.com")								--->	Update fields
+				session.getTransaction().commit();									--->	Commit the transaction
+		}finally{
+			factory.close();
+		}
+	
+	Delete Object
+		Session session = factory.getCurrentSession();								--->	Create the session
+		try{
+				session.beginTransaction();											--->	Start a transaction
+				Student student = session.get(Student.class,theStudent.getId());	--->	Recover the row by id number
+				session.delete(student);											--->	Give the object to delete
+				session.getTransaction().commit();									--->	Commit the transaction
+		}finally{
+			factory.close();
+		}
+		
+	ID Generation Strategies
+		GenerationType.Auto			--->	Pick an appropriate strategy for the particular database
+		GenerationType.IDENTITY		--->	Assign primary keys using database identity column
+		GenerationType.SEQUENCE		--->	Assign primary keys using a database sequience
+		GenerationType.TABLE		--->	Assign primary keys using an underlying database table to ensure uniqueness
+
+	Hibernate @OneToOne 
+		@Entity
+		@Table(name="instructor_detail")
+		public class InstructorDetail {
+
+			@Id
+			@GeneratedValue(strategy=GenerationType.IDENTITY)
+			@Column(name="id")
+			private String id;
+			@Column(name="youtube_channle")
+			private String youtubeChannel;
+			@Column(name="hobbie")
+			private String hobbie;
+			
+		}
+		
+		@Entity
+		@Table(name="instructor")
+		public class Instructor {
+
+			@Id
+			@GeneratedValue(strategy=GenerationType.IDENTITY)
+			@Column(name="id")
+			private int id;
+			@Column(name="first_name")
+			private String firstName;
+			@Column(name="last_name")
+			private String lastName;
+			@Column(name="email")
+			private String email;
+			@OneToOne(cascade=CascadeType.ALL)						--->	Define relationship 
+			@JoinColumn(name="instructor_detail_id")				--->	Name of the foreign key in the database
+			private InstructorDetail instructorDetail;				--->	
+		}
+		
+	Hibernate @OneToOne Bi-Directional
+		If we load an InstructorDetail
+			then we would like to get the associated Instructor, but is not possible with uni-directional relationship 
+			In this case for making possible we can use Bi-Directional.
+		
+			@Entity
+			@Table(name="instructor_detail")
+			public class InstructorDetail {
+
+				@Id
+				@GeneratedValue(strategy=GenerationType.IDENTITY)
+				@Column(name="id")
+				private String id;
+				@Column(name="youtube_channle")
+				private String youtubeChannel;
+				@Column(name="hobbie")
+				private String hobbie;
+				@OneToOne(mappedBy="instructorDetail",cascade=CascadeType.ALL)	--->	add @OneToOne annotation for the relationship 
+				private Instructor instructor;						--->	Add new field to reference Instructor in InstructorDetail
+				//add getter / setter methods for Instructor
+			}
+			*Note 
+				mappedBy="instructorDetail" (refer to "instructorDetail" proeprty in "Instructor" class)
+				mappedBy tell Hibernate	
+					Look at the instructorDetail property in the Instructor class
+					Use information from the Instructor class @JoinColumn
+					To help fin associated instructor
+			
+		
+		Delete only the detail Object
+			In the Entity class change this configuration
+				@Entity
+				@Table(name="instructor_detail")
+				public class InstructorDetail {
+						...
+					@OneToOne(mappedBy="instructorDetail",
+					{cascade=CascadeType.DETACH,cascade=CascadeType.MERGE,
+					cascade=CascadeType.PERSIST,cascade=CascadeType.REFRESH})	--->	Change from ALL to the rest of type except REMOVE
+					private Instructor instructor;						--->	Add new field to reference Instructor in InstructorDetail
+					//add getter / setter methods for Instructor
+				}
+			
+			In the app 
+				Session session = factory.getCurrentSession();
+				try {
+					
+					session.beginTransaction();
+					
+					InstructorDetail instructorDetail = session.get(InstructorDetail.class, 1);		--->	get the instructorDetail to delete
+					instructorDetail.getInstructor().setinstructorDetail(null);						--->	remove the associated object reference break bi-directional link
+					
+					session.getTransaction().commit();
+					
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally {
+					session.close();
+				}
+		
+	Hibernate @OneToMany Bi-Directional
+		Create entity
+		
+		@Entity
+		@Table(name="course")
+		public class Course {
+
+			@Id
+			@GeneratedValue(strategy=GenerationType.IDENTITY)
+			@Column(name="id")
+			private int id;
+			
+			@Column(name="title")
+			private String title;
+			
+			@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE,
+					CascadeType.DETACH,CascadeType.REFRESH})
+			@JoinColumn(name="instructor_id")									--->	instructor_id is the foreign key that refer to instructor	
+			private Instructor instructor;										--->
+			//getter and setter and constructor
+		}
+		
+		@Entity
+		@Table(name="instructor")
+		public class Instructor {
+
+			@Id
+			@GeneratedValue(strategy=GenerationType.IDENTITY)
+			@Column(name="id")
+			private int id;
+			@Column(name="first_name")
+			private String firstName;
+			@Column(name="last_name")
+			private String lastName;
+			@Column(name="email")
+			private String email;
+			@OneToOne(cascade=CascadeType.ALL)
+			@JoinColumn(name="instructor_detail_id")
+			private InstructorDetail instructorDetail;
+			
+			@OneToMany(mappedBy="instructor",cascade={CascadeType.PERSIST,CascadeType.MERGE,//--->	Refers to "instructor" property in "Course" class
+													CascadeType.DETACH,CascadeType.REFRESH})
+			private List<Course> courses;
+			
+			//Add convenience methods for bi-directional relationship
+			public void add(Course course) {
+				if(courses==null) {
+					courses = new ArrayList<Course>();
+				}
+				courses.add(course);
+				course.setInstructor(this);
+			}
+	
+		Create Object
+			Session session = factory.getCurrentSession();
+			try {
+				
+				session.beginTransaction();
+				
+				Instructor instructor = session.get(Instructor.class, 1);		--->	get the Instructor where we are going to save the course
+				Course course1 = new Course("Master in Web Services");			--->	Create the courses
+				Course course2 = new Course("Master in web Components");
+				
+				instructor.add(course1);										--->	Save the course in  instructor it will updated in the database automatically
+				instructor.add(course2);										--->	Save the course in  instructor it will updated in the database automatically
+				
+				session.save(course1);											--->	Save the Course in the Database
+				session.save(course2);											--->	Save the Course in the Database
+				session.getTransaction().commit();
+			}finally {
+				session.close();
+				factory.close();
+			}
+	
+		Delete Object
+			Session session = factory.getCurrentSession();
+			try {
+				session.beginTransaction();
+				Course course = session.get(Course.class, 11);
+				session.delete(course);
+				session.getTransaction().commit();
+			}finally {
+				session.close();
+				factory.close();
+			}
+	
+	Fetch Types: Eager vs Lazy
+		Eager will retrieve everything (will load all dependent entities)
+		Lazy will retrieve on request (will load the main entity first and then load the dependent entitites on demand)
+		
+		When you define the mapping relationship, you can specify the fetch type: EAGER or LAZY
+			fecth=FetchType.EAGER
+			fetch=FetchType.LAZY
+		Default Fetch Types
+			@OneToOne		FetchType.EAGER
+			@OneToMany		FetchType.LAZY
+			@ManyToOne		FetchType.EAGER
+			@ManyToMany		FetchType.LAZY
+			
+		To retrieve lazy data, you will need to open a Hibernate session	
+			opt 1: session.get and call appropiate getter methods
+			opt 2: Hibernate query with HQL
+	
+	Hibernate @OneToMany Uni-Directional
+	
+	Hibernate @ManyToMany
+		In entity table
+		
+		Course Entity
+		
+			@ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE,
+				CascadeType.DETACH,CascadeType.REFRESH})
+			@JoinTable(name="course_student",								--->	Table name
+					joinColumns=@JoinColumn(name="course_id"),				--->	field name
+					inverseJoinColumns=@JoinColumn(name="student_id"))		--->	field name
+			List<Student> students;
+	
+		Student	Entity
+			@ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE,
+			CascadeType.DETACH,CascadeType.REFRESH})
+			@JoinTable(name="course_student",								--->	Table name
+					joinColumns=@JoinColumn(name="student_id"),				--->	field name
+					inverseJoinColumns=@JoinColumn(name="course_id"))		--->	field name
+			List<Course> courses;
+			
+		Create Course And Student
+			Session session = factory.getCurrentSession();
+			try {
+				
+				session.beginTransaction();
+				
+				Course course = new Course("Java Web Services");
+				session.save(course);
+				
+				Student stu1 = new Student("Oscar", "Hernandez", "oscar.hdez.s@gmail.com");
+				Student stu2 = new Student("Margarita", "Castañeda", "marcasal@gmail.com");
+				
+				course.add(stu1);
+				course.add(stu2);
+				
+				session.save(stu1);
+				session.save(stu2);
+				
+				session.getTransaction().commit();
+			}finally {
+				session.close();
+				factory.close();
+			}
+			
+		Add Course for Student
+			Session session = factory.getCurrentSession();
+			try {
+				
+				session.beginTransaction();
+				
+				Student student = session.get(Student.class,1);
+				
+				Course course1 = new Course("Spring Core");
+				Course course2 = new Course("Spring MVC");
+				
+				course1.add(student);
+				course2.add(student);
+				
+				session.save(course1);
+				session.save(course2);
+				
+				session.getTransaction().commit();
+			}finally {
+				session.close();
+				factory.close();
+			}
+	
+	
+	
+	Cascade Strategies
+		CascadeType.ALL
+		CascadeType.DETACH
+		CascadeType.MERGE
+		CascadeType.PERSIST
+		CascadeType.REFRESH
+		CascadeType.REMOVE
+		
+Sprin provides @Transactional 
+	Automatically begin and end a transaction for your Hibernate code; no need beginTransaction or commit
+		no need anymore for:
+			session.beginTransaction()
+			session.getTransaction().commit();
+		only need put @Transactional in the top of the method
+			@Transactional
+			public List<Customer> getCustomers(){
+			
+			}
+			
+Spring @Repository
+	Applied to DAO Implementation.
+	Spring will automatically register the DAO implemtation (thanks to compenent-scanning)
+	Spring also provides translation of any JDBC related exceptions.
+	
+Spring @Service	
+	Applied to Service Implementations
+	Spring will automatically register the Service implementation (thanks to compenent-scanning)
+	
+	
+Spring @GetMapping @PostMapping
+	@RequestMapping(path="/list",method=RequestMethod.GET)		--->		@GetMapping("/list")
+	public String listCustomer(Model model) {								public String listCustomer(Model model) {
+				...																			...
+	}																		}
+
+	@RequestMapping(path="/list",method=RequestMethod.POST)		--->		@PostMapping("/list")
+	public String listCustomer(Model model) {								public String listCustomer(Model model) {
+				...																			...
+	}	
+	
+	
+AOP: Aspect-Oriented Programming  
+	Spring AOP only supports
+		Method-level join points
+		Run-time code weaving(slower that AspectJ)
+
+	AOP Terminology
+		Aspect: module of code for a cross-cutting concern(logging, security)
+		Advice: What action is taken and when it should be applied
+		Join Point: When to apply code during program execution
+		Pointcut: A predicate expression for where advice should be applied
+		
+	Advices Types
+		Before advice: run before the method
+		After finally advice: run after the method (finally)
+		After returning advice: run after the method (success execution)
+		After throwing advice: run after method (if exception thrown)
+		Around advice: run before and after method
+		
+	Weaving 
+		Connection aspects to target objects to create an advised object
+		
+	Spring AOP @Before
