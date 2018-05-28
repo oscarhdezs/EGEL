@@ -417,7 +417,7 @@ Java Source Code
 		
 	-Inject values from Properties File
 		@Configuration
-		@PropertySource("classpath:data.properties")		--->	Load the property file
+		@PropertySource("classpath:data.properties")		--->	Load the property file since annotation
 		public class SportConfigWithoutComponentScan {
 			@Bean FortuneService niceFortuneService() {
 				return new NiceFortuneService();
@@ -1160,4 +1160,613 @@ AOP: Aspect-Oriented Programming
 	Weaving 
 		Connection aspects to target objects to create an advised object
 		
+	AOP Pointcut expressions
+		Pointcut: A predicate expression for where advice should be applied
+			execution method
+				execution(modifiers-pattern? return-type-pattern declaring-type-pattern? 				  method-name-pattern(param-pattern) throws-pattern?)
+				execution(pulic				 void				 com.oscar.springdemo.aspects.DemoAspect. beforeAddAccountAdvice())
+				note: The pattern is optional if it has "?"
+				you can use wildcards
+					* (matches on everything)
+						execution(public void add*())			--->	Matches methods starting with add in any class
+			
+			Parameter pattern Wildcards
+				For param-pattern
+					()		--->	matches a method with no arguments
+					(*)		--->	matches a method with one argument of any type
+					(..)	--->	matches a method with 0 or more arguments of any type
+				
 	Spring AOP @Before
+		Before advice: run before the method
+		
+		
+		@EnableAspectJAutoProxy									--->	in configuration file.
+		<aop:aspectj-autoproxy/>								--->	in xml file
+	
+		Class where the Aspect will be aplied
+			@Component
+			public class AccountDAO {
+
+				public void addAccount() {						--->	Give the name on the aspect execution
+					System.out.println(getClass()+": Doing my db work: adding an account");
+				}
+				
+			}
+	
+		Simple advice
+		Create Advice Class
+			@Component											--->	Must Be a Component
+			@Aspect												--->	Say it is an Aspect class
+			public class MyDemoLoggingAspect {
+
+				@Before("execution(public void addAccount())")	--->	Declare @Before advise, match all methods that be public void AddAccount()
+				public void beforeAddAccountAdvice() {
+					System.out.println("\n====>>> Executing @Before advice on addAccount()");
+				}
+				
+			}
+		Match a Specific method 
+			@Before("execution(public void com.oscar.springdemo.dao.MembershipDAO.addAccount())")	--->	Declare @Before advise, 
+																									--->	specific method in a class, we added package
+				
+		Match a method starting with "add" in any class
+			@Before("execution(public void add*())")												--->	Declare @Before advise, 
+																									--->	match all method start with "add"
+																									
+		Match a method with given "return type"
+			@Before("execution(public * addAccount())")												--->	Declare @Before advise, 
+																									--->	match all addAccount method with any return type
+																									
+		Match a method with no arguments
+			@Before("execution(public void addAccount())")											--->	Declare @Before advise, 
+																									--->	match all addAccount method with no arguments 
+																									
+		Match a method with "Account" param
+			@Before("execution(public void addAccount(com.oscar.springdemo.entity.Account))")		--->	Declare @Before advise, 
+																									--->	match all AddAccount method with Account parameter
+																									
+		Match a method with "Account" followed with any param
+			@Before("execution(public void addAccount(com.oscar.springdemo.entity.Account,..))")	--->	Declare @Before advise, 
+																									--->	match all AddAccount method with Account folled with any parameter																									
+																									
+		Match a method with any number of param	(0..N)
+			@Before("execution(public void addAccount(..))")										--->	Declare @Before advise, 
+																									--->	match all AddAccount method with any parameter		
+		
+		Match all methods in all classes with any number of param	in specific pack
+			@Before("execution(public void com.oscar.springdemo.dao.*.*(..))")						--->	Declare @Before advise, 
+																									--->	match all methods in all classes with any number of param	in specific pack
+
+	AOP Pointcut Declaration
+		You can create a pointcut declaration once and Apply it to multiple advices.
+		
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+
+			@Pointcut("execution(* com.oscar.springdemo.dao.*.*(..))")								---> Declare Pointcut with the expression
+			private void forDaoPackage() {}
+			
+			@Before("forDaoPackage()")																---> Use the pointcut in the method
+			public void beforeAddAccountAdvice() {
+				System.out.println("\n====>>> Executing @Before advice on addAccount()");
+			}
+			
+			@Before("forDaoPackage()")																---> Re-use pointcut expression
+			public void performApiAnalytics() {
+				System.out.println("\n====>>> Perform API analytics");
+			}
+		}
+	
+	Combine Pointcut expression
+		Create Pointcut for all methods in a package Except getter/setter methods
+		
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+
+			@Pointcut("execution(* com.oscar.springdemo.dao.*.*(..))")							--->	all methods in all classes with any parameter specific package
+			private void forDaoPackage() {}
+			
+			@Pointcut("execution(* com.oscar.springdemo.dao.*.get*(..))")						---> all start with get
+			private void getter() {}
+			
+			@Pointcut("execution(* com.oscar.springdemo.dao.*.set*(..))")						--->	all start with set
+			private void setter() {}
+			
+			@Pointcut("forDaoPackage() && !(getter() || setter())")								--->	Combine Pointcut with forDaoPackage except getter()setter()
+			private void DaoNoSetNoGet() {
+				
+			}
+			
+			@Before("DaoNoSetNoGet()")
+			public void beforeAddAccountAdvice() {
+				System.out.println("\n====>>> Executing @Before advice on addAccount()");
+			}
+			
+			@Before("DaoNoSetNoGet()")
+			public void performApiAnalytics() {
+				System.out.println("\n====>>> Perform API analytics");
+			}
+			
+		}
+		
+	Ordering Aspects
+		Control the order with @Order(1)
+			Guarantees order of when Aspects are applied
+			Lower numbers have higher precendence
+			Does not have to be consecutive
+			Negative number are allowed
+			If two aspects have the same num order annotation, The order is undefined
+			
+			@Aspect
+			public class GenericAopExpressions {
+
+				@Pointcut("execution(* com.oscar.springdemo.dao.*.*(..))")
+				public void forDaoPackage() {}										--->	Must be pulic
+				
+				@Pointcut("execution(* com.oscar.springdemo.dao.*.get*(..))")
+				public void getter() {}												--->	Must be pulic
+				
+				@Pointcut("execution(* com.oscar.springdemo.dao.*.set*(..))")
+				public void setter() {}												--->	Must be pulic
+				
+				@Pointcut("forDaoPackage() && !(getter() || setter())")
+				public void DaoNoSetNoGet() {										--->	Must be pulic
+					
+				}
+				
+			}
+			
+			@Aspect
+			@Component	
+			@Order(1)													--->	Define the order
+			public class MyCloudLogAsyncAspect {
+
+				@Before("com.oscar.springdemo.aspects.GenericAopExpressions.DaoNoSetNoGet()")	--->	Must be with full qualify name
+				public void logToCloudAsync() {
+					System.out.println("\n====>>> Logging to Cloud in async fashion");
+				}
+				
+			}
+			
+			@Component
+			@Aspect
+			@Order(2)													--->	Define the order
+			public class MyDemoLoggingAspect {
+
+				@Before("com.oscar.springdemo.aspects.GenericAopExpressions.DaoNoSetNoGet()")
+				public void beforeAddAccountAdvice() {
+					System.out.println("\n====>>> Executing @Before advice on addAccount()");
+				}
+				
+			}
+			
+			@Component
+			@Aspect
+			@Order(3)													--->	Define the order
+			public class MyApiAnalyticsAspect {
+
+				@Before("com.oscar.springdemo.aspects.GenericAopExpressions.DaoNoSetNoGet()")
+				public void performApiAnalytics() {
+					System.out.println("\n====>>> Perform API analytics");
+				}
+				
+			}
+	
+	JoinPoints
+		Help us to:
+			Access and display Method Signature
+			Access and display Method Arguments
+			
+			@Component
+			@Aspect
+			public class MyApiAnalyticsAspect {
+
+				@Before("com.oscar.springdemo.aspects.GenericAopExpressions.DaoNoSetNoGet()")
+				public void performApiAnalytics(JoinPoint joinpoint) {								--->	Use JoinPoint to access method signature and parameter
+					
+					MethodSignature methodSignature = (MethodSignature)joinpoint.getSignature();	--->	Get the method signature
+					System.out.println("Method signature:"+methodSignature);
+					
+					Object[] objects = joinpoint.getArgs();											--->	Get the methods arguments.
+					for(Object o:objects) {
+						System.out.println("Object:"+o);
+					}
+				}
+				
+			}
+			
+	@AfterReturning
+		After returning advice: run after the method (success execution)
+			Post process the data before returning to caller
+			Format the data or enrich the data 
+			
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+
+			@AfterReturning(pointcut="execution(* com.oscar.springdemo.dao.AccountDAO.findAccounts(..))",		--->	Define the poincut expression
+					returning="listAccount")																	--->	Define the object name to returning 
+			public void afterReturningFindAccountsAdvice(JoinPoint joinPoint, List<Account> listAccount) {		--->	Define the joinPoint and te returning name-pattern			
+																												--->	must be the same as in "returning" value
+				System.out.println("\\n====>>> Executing @AfterReturning advice on "+joinPoint.getSignature());
+				System.out.println(listAccount);
+				
+			}
+		}
+		
+	@AfterThrowing
+		After throwing advice: run after method (if exception thrown)
+			Log the exception
+			Perform auditing on the exception
+			Encapsulate this functionality in AOP aspect for easy reuse
+		The exception is propagate, if you want to stop the exception propagation:
+			then use the @Around advice
+		
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+
+			@AfterThrowing(pointcut="execution(* com.oscar.springdemo.dao.AccountDAO.findAccounts(..))",
+					throwing="exception")																		--->	Define the object name to returning 
+			public void afterThrowingFindAccountsAdvice(JoinPoint joinPoint, Exception exception) {				--->	must be the same as in "throwing" value
+				
+				System.out.println("\\\\n====>>> Executing @AfterReturning advice on "+joinPoint.getSignature());
+				System.out.println("Exceptionaaaaa:"+exception);
+			}
+			
+		}
+		
+	@After
+		After finally advice: run after the method (finally)
+			It always run, on success or exception
+			it does not have access to the exception
+			
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+
+			@After("execution(* com.oscar.springdemo.dao.AccountDAO.findAccounts(..))")
+			public void afterFinallyFindAccountsAdvice(JoinPoint joinPoint) {
+				System.out.println("\\\\n====>>> Executing @After (finally) on method "+joinPoint.getSignature());
+			}
+		}
+		
+	@Around
+		Around advice: run before and after method
+			Pre-processing and post-processing data
+			Instrumentation / profiling code	
+				How long does it take for a section fo code to run?
+			Magaging exceptions		
+				Swallow / handle / stop exceptions
+				rethrow the exception
+				
+		@Component
+		@Aspect
+		public class MyDemoLoggingAspect {
+			@Around("execution(* com.oscar.springdemo.service.*.getFortune(..))")												--->	Defining pointcutExpression
+			public Object aroundGetFortune(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {							--->	ProccedingJoinPoint as parameter
+				myLogger.info("\n====>> Executing @Around on method:"+proceedingJoinPoint.getSignature().toShortString());
+				long begin = System.currentTimeMillis();
+				Object result = proceedingJoinPoint.proceed();																	--->	go to execute the 
+				long end = System.currentTimeMillis();
+				long duration = end - begin;
+				myLogger.info("\n ===>> Duration:"+duration/1000.0+" Seconds");
+				return result;
+			}
+			
+		}
+		
+		Handle Exception
+		
+		@Component
+		@Aspect
+		@Order(2)
+		public class MyDemoLoggingAspect {
+			private static Logger myLogger = Logger.getLogger(MyDemoLoggingAspect.class.getName());
+			@Around("execution(* com.oscar.springdemo.service.*.getFortune(..))")
+			public Object aroundGetFortune(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+				myLogger.info("\n====>> Executing @Around on method:"+proceedingJoinPoint.getSignature().toShortString());
+				long begin = System.currentTimeMillis();
+				Object result = null;
+				try {
+					result=proceedingJoinPoint.proceed();
+				}catch(Exception e){
+					result="Major accident! but no worries, your private AOP helicopter is on the way!";			//Handle the exception
+					myLogger.warning("Major accident! Highway is closed!del resultado");
+				}
+				long end = System.currentTimeMillis();
+				long duration = end - begin;
+				myLogger.info("\n ===>> Duration:"+duration/1000.0+" Seconds");
+				return result;
+			}
+			
+		}
+		
+		Rethrow exception
+		
+		
+		
+Spring Rest
+
+
+Spring Security
+	Web Configuration withot XML
+		Configure Beans
+	
+		@Configuration											--->	it is a configuration file
+		@EnableWebMvc											--->	same as <mvc:annotation-drive/>
+		@ComponentScan(basePackages="com.oscar.spring")		--->	<context:component-scan base-package="com.oscar.spring"/>
+		public class DemoAppConfig{
+			
+			@Bean
+			public ViewResolver viewResolver(){					--->	Defining the InternalResourceViewResolver
+				InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+				internalResourceViewResolver.setPrefix("/WEB-INF/view/");
+				internalResourceViewResolver.setsuffix(".jsp");
+				return internalResourceViewResolver;
+			}
+		}
+		
+	
+		Configure the web.xml
+		
+		public MySpringMvcDispatcherServletInitializer extends
+			AbstractAnnotationConfigDispatcherServletInilizer{	--->	Extends this class for enable the servlet configuration
+		
+			protected Class<?>[] getRootConfigClasses(){		--->	Implements this method
+				
+			}
+			
+			protected Class<?>[] getServletConfigClasses(){		--->	Implements this method
+				return new Class[]{DemoAppConfig.class};		--->	Servlet config class that we created before, that contain the configuration
+			}
+			
+			protected String[] getServletMappings(){			--->	Implements this method
+				return new String[]{"/"};						--->	Servlet mapping
+			}
+		}
+		
+	Configure Basic Security
+		Create Spring Security Initializer
+			public class SecurityWebApplicationInitializer extends 
+				AbstractSecurityWebApplicationInitializer{		--->	Special class to register the Spring Security Filters
+
+			}
+		
+	Create Spring Security Configuration (@Configuration) &	Add users, passwords and roles
+		@Configuration
+		@EnableWebSecurity
+		public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
+			@Override
+			protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+				UserBuilder users = User.withDefaultPasswordEncoder();
+				auth.inMemoryAuthentication()
+					.withUser(users.username("Oscar").password("test123").roles("EMPLOYEE"))
+					.withUser(users.username("Margarita").password("test123").roles("EMPLOYEE","MANAGER"))
+					.withUser(users.username("Su").password("test123").roles("EMPLOYEE","ADMIN"));
+			}
+
+	Custom Login Form add the follow method
+	
+			protected void configure(HttpSecurity httpSecurity) throws Exception {
+				httpSecurity.authorizeRequests()				--->	Restrict access based on the HttpServletRequest
+					.anyRequest().authenticated()				--->	Any request to the app must be authenticated
+					.and()
+					.formLogin()								--->	We are customizing the form login process
+					.loginPage("/showMyLoginPage")				--->	Show the custom form at the request mapping
+					.loginProcessingUrl("/authenticateTheUser") --->	Login form should POST data to this URO for processing
+					.permitAll()								--->	Allow all access here
+					.and()
+					.logout().permitAll();						--->	Add logout support for default URL /logout
+			}
+		}
+		
+		in controller
+			@Controller
+			public class LoginController {
+				@GetMapping("/showMyLoginPage")					--->	The same as loginPage
+				public String showMyLoginPage() {
+					return "plain-login";
+				}
+			}
+		
+		in Jsp plain-login.jsp
+			<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">		--->	must be the same as loginProcessingUrl
+				<c:if test="${param.error!=null}">					--->	When you enter invalid username & password, spring append "?error" parameter and redirect to login page
+					<i>Sorry! You entered invalid username/password</i>		in the url
+				</c:if>
+				<c:if test="${param.logout!=null}">					--->	When logout is submit spring redirecto to login page and add "?logout" parameter to url
+					<i>Sorry! You have been logged out.</i>		
+				</c:if>
+				User name:<input type="text" name="username"/>		--->	name must be username
+				Password:<input type="password" name="password"/>	--->	name must be password
+				<input type="submit" value="Login"/>
+			</form:form>
+		
+		
+						METHOD											DESCRIPTION
+			configure(AuthenticationManagerBuilder)				Configure users (in memory, database, ldap, etc)
+			configure(HttpSecurity)								Configure security of web paths in application, login, logout etc
+			
+			
+			/logout URL will be handled by Spring Security Filters (no coding required), when it is hit, it invalidate user's HTTP session
+			and remove session cookies. 
+			Send user back to your login page
+			Append a logout parameter: ?logout
+	
+	
+	Display User ID and Roles
+		<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+			user:<security:authentication property="principal.username"/>
+			Roles:<security:authentication property="principal.authorities"/>
+	
+	Display Content based on Roles
+		<security:authorize access="hasRole('MANAGER')">
+			content to display
+		</security:authorize>
+			
+	Restrict access Based on Roles
+		protected void configure(HttpSecurity httpSecurity) throws Exception {
+				httpSecurity.authorizeRequests()					--->	Restrict access based on the HttpServletRequest
+					.anyRequest().authenticated()					--->	Any request to the app must be authenticated
+					.antMatchers("/").hasRole("EMPLOYEE")			--->	To "/" have access all that have "EMPLOYEE" role
+					.antMatchers("/leaders/**").hasRole("MANAGER")	--->	To "/leaders" have access all that have "MANAGER" role
+					.antMatchers("/systems/**").hasRole("ADMIN")	--->	To "/systems" have access all that have "ADMIN" role
+					.and()
+					.formLogin()									--->	We are customizing the form login process
+					.loginPage("/showMyLoginPage")					--->	Show the custom form at the request mapping
+					.loginProcessingUrl("/authenticateTheUser") 	--->	Login form should POST data to this URO for processing
+					.permitAll()									--->	Allow all access here
+					.and()
+					.logout().permitAll()							--->	Add logout support for default URL /logout
+					.and()
+					.exceptionHandling().accessDeniedPage("/access-denied");	--->	When an user trying to access to a resource that have different role
+			}																	--->	we redirect to this url.
+			
+	Spring Security JDBC
+		By default, you have to follow Spring Security's predefined table schemas.
+			
+							users						authorities					---> authorities is role
+					username varchar(50)			username varchar(50)
+					password varchar(50)			authority varchar(50)			---> must inter with "ROLE_" prefix in this records
+					enabled tinyint(1)
+	
+		Configure the JDBC Connection and load data from property file
+			@PropertySource("classpath:persistence-mysql.properties")
+			public class DemoAppConfig {
+		
+				@Autowired
+				private Environment env;											--->		will hold data read from properties files
+			
+				@Bean																--->		Define Bean for latter use it
+				public DataSource securityDataSource() {
+					
+					ComboPooledDataSource securityDataSource = new ComboPooledDataSource();
+					
+					try {
+						securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+					} catch (PropertyVetoException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
+					securityDataSource.setUser(env.getProperty("jdbc.username"));
+					securityDataSource.setPassword(env.getProperty("jdbc.password"));
+					
+					securityDataSource.setInitialPoolSize(0);
+					securityDataSource.setMinPoolSize(0);
+					securityDataSource.setMaxPoolSize(0);
+					securityDataSource.setMaxIdleTime(0);
+					
+					
+					return securityDataSource;
+			}	}
+	
+		Use the dabase for authentication
+			@Configuration
+			@EnableWebSecurity
+			public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
+				
+				@Autowired
+				DataSource securityDataSource;									--->		Bean that was defined previously
+				@Override
+				protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+					auth.jdbcAuthentication().dataSource(securityDataSource);
+				}
+			}
+
+			
+Spring Rest
+	JSON ---> Java Script Object Notation
+		Lightweight data format for storing and exchangin data ... plain text, language independent
+		-Curley braces define ojbects in JSON
+		-Object members are name/ value pairs; delimited by colons
+		-The name is double quote
+		
+		{
+			"id":18,
+			"firstName":"Oscar",
+			"lastName":"Hernandez",
+			"active":true,
+			"courses":null
+			"address":	{
+							"street":"Vista de la montaña",
+							"number":21,
+							"currentLocation":true
+						{
+			"languages":["Java","C#","Python","Javascript"]
+		}
+		
+	Data Binding --->	Process of converting JSON data to a Java POJO
+	Jackson --->	Support of databinding, it support XML and JSON
+	
+	JSON to Java pojo, Jackson call setXXX methods, Jackson does not access internal private fields directly
+		ObjectMapper mapper = new ObjectMapper();
+		Student student = mapper.readValue(new File("data/student.json"),Student.class);
+		
+	Java pojo to JSON, 	Jackson call getXXX methods on POJO
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(SerializationFeature.INDENT_OUPUT);
+		mapper.writeValue(new File("data/output.json"),student);
+	
+	When building Spring REST applications
+		Spring will automatically handle Jackson Integration
+		JSON data being passed to REST controller is converted to POJO
+		Java object being returned from REST controller is converted to JSON
+	
+	HTTP Response - Status Codes
+			Code Range				Description
+			100 - 199				Informational
+			200 - 299				Successful
+			300 - 399				Redirection
+			400 - 499				Client error
+			500 - 599				Server error
+			
+	MIME Content Types
+		The message format is described by MIME content type
+			Basic Syntax: 	type/sub-type
+							text/html, text/plain, application/json, application/xml
+
+	Spring Rest Support
+		Spring Web MVC provides support for Spring Rest
+		@RestController
+			Extension of @Controller
+			Handles REST request and response
+		Spring REST will also automatically convert Java POJOs to JSON
+		
+	@Configuration
+	@EnableWebMvc
+	@ComponentScan("com.oscar.springdemo")
+	public class DemoAppConfig {
+
+	}
+	
+	public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+		@Override
+		protected Class<?>[] getRootConfigClasses() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		protected Class<?>[] getServletConfigClasses() {
+			// TODO Auto-generated method stub
+			return new Class[] {DemoAppConfig.class};
+		}
+		@Override
+		protected String[] getServletMappings() {
+			// TODO Auto-generated method stub
+			return new String[] {"/"};
+		}
+	}
+
+	@RestController
+	@RequestMapping("/test")
+	public class DemoRestController {
+		@RequestMapping("hello")
+		public String helloWorld() {
+			return "Hello world!!!";
+		}
+	}
